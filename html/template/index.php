@@ -1,0 +1,1044 @@
+<?php
+require_once(__DIR__ . "/backend/connection.inc.php");
+
+if (session_status() === PHP_SESSION_NONE) {
+	session_start();
+}
+
+// $user_id = $_SESSION['user_id'];
+
+?>
+
+
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+
+	<meta charset="UTF-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1">
+	<title>Lupicad</title>
+
+	<!-- Favicon -->
+	<link rel="shortcut icon" href="assets/lupicad/logo.svg" type="image/x-icon">
+	<link rel="stylesheet" href="https://unpkg.com/@iconscout/unicons/css/line.css">
+
+	<!-- Apple Touch Icon -->
+	<link rel="apple-touch-icon" sizes="180x180" href="assets/img/apple-touch-icon.png">
+
+	<!-- Theme Settings Js -->
+	<script src="assets/js/theme-script.js" type="290daf7fcf744922b4c3c7cf-text/javascript"></script>
+
+	<!-- Bootstrap CSS -->
+	<link rel="stylesheet" href="assets/css/bootstrap.min.css">
+
+	<link rel="stylesheet" href="assets/css/animate.css">
+
+	<!-- Fontawesome CSS -->
+	<link rel="stylesheet" href="assets/plugins/fontawesome/css/fontawesome.min.css">
+	<link rel="stylesheet" href="assets/plugins/fontawesome/css/all.min.css">
+
+	<!-- Iconsax CSS-->
+	<link rel="stylesheet" href="assets/css/iconsax.css">
+
+	<!-- Feathericon CSS -->
+	<link rel="stylesheet" href="assets/css/feather.css">
+
+	<!-- Datepicker CSS -->
+	<link rel="stylesheet" href="assets/css/bootstrap-datetimepicker.min.css">
+
+	<!-- Owl Carousel CSS -->
+	<link rel="stylesheet" href="assets/css/owl.carousel.min.css">
+
+	<!-- Animation CSS -->
+	<link rel="stylesheet" href="assets/css/aos.css">
+
+	<!-- select CSS -->
+	<link rel="stylesheet" href="assets/plugins/select2/css/select2.min.css">
+
+	<!-- Main CSS -->
+	<link rel="stylesheet" href="assets/css/custom.css">
+
+	<!-- Slick Slider CSS -->
+	<link rel="stylesheet" type="text/css"
+		href="https://cdnjs.cloudflare.com/ajax/libs/slick-carousel/1.8.1/slick.min.css" />
+	<link rel="stylesheet" type="text/css"
+		href="https://cdnjs.cloudflare.com/ajax/libs/slick-carousel/1.8.1/slick-theme.min.css" />
+
+	<!-- Slick Slider JS -->
+	<script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.6.0/jquery.min.js"></script>
+	<script type="text/javascript"
+		src="https://cdnjs.cloudflare.com/ajax/libs/slick-carousel/1.8.1/slick.min.js"></script>
+
+
+	<!-- Inline CSS for Styling -->
+	<style>
+		.image-slider {
+			width: 100%;
+			margin: 0 auto;
+		}
+
+		.slider-container {
+			width: 100%;
+		}
+
+		.slider-container img {
+			width: 100%;
+			object-fit: cover;
+		}
+		.gallery-section {
+		  padding: 40px 0;
+		}
+		.gallery-row {
+		  display: flex;
+		  flex-wrap: wrap;
+		  justify-content: center;
+		}
+		.gallery-item img {
+		  border-radius: 8px;
+		  transition: transform 0.2s;
+		  box-shadow: 0 2px 8px rgba(0,0,0,0.08);
+		}
+		.gallery-item img:hover {
+		  transform: scale(1.05);
+		}
+	</style>
+
+</head>
+
+<body>
+
+	<!-- Main Wrapper -->
+	<div class="main-wrapper">
+		<!-- Header -->
+		<?php require_once(__DIR__ . "/components/header.php") ?>
+
+		<!-- /Header -->
+
+		<!-- Home Banner -->
+		<section class="banner-section banner-sec-one">
+			<!-- Image Slider Container -->
+			<div class="image-slider" style="width: 100%; margin: 0 auto; overflow: hidden;">
+				<div class="slider-container">
+					<div><img src="assets/img/banner/1banner (2).jpg" alt="patient-image" style="width: 100%; object-fit: cover;"></div>
+					<div><img src="assets/lupicad/2banner.png" alt="patient-image" style="width: 100%; object-fit: cover;"></div>
+					<div><img src="assets/lupicad/3banner.png" alt="patient-image" style="width: 100%; object-fit: cover;"></div>
+				</div>
+			</div>
+            <section style="margin: 20px 0px; display: flex; flex-direction: row; gap: 20px; background: linear-gradient(90deg, #007cf0 0%, #00dfd8 100%);">
+			<center><img src="assets/lupicad/fg.png" style="width: 90%" alt="Badges"></center> 
+		</section>
+			<!-- Optional Background -->
+			<div class="banner-bg">
+			    		<section class="services-section aos" data-aos="fade-up" style="background: linear-gradient(90deg, #FFC03E 0%, #ff8d62 100%) !important;">
+			<div class="horizontal-slide d-flex" data-direction="right" data-speed="fast">
+				<div class="slide-list d-flex gap-4">
+					<div class="services-slide">
+						<h6><a href="javascript:void(0);">FREE SHIPPING</a></h6>
+					</div>
+					<div class="services-slide">
+						<h6><a href="javascript:void(0);">SECURED PAYMENT</a></h6>
+					</div>
+					<div class="services-slide">
+						<h6><a href="javascript:void(0);">MEDICINE & SUPPLIES</a></h6>
+					</div>
+					<div class="services-slide">
+						<h6><a href="javascript:void(0);">LAB TESTING</a></h6>
+					</div>
+					<div class="services-slide">
+						<h6><a href="javascript:void(0);">COD AVAILABLE</a></h6>
+					</div>
+					<!-- <div class="services-slide">
+							<h6><a href="javascript:void(0);">Home Care Services</a></h6>
+						</div> -->
+				</div>
+			</div>
+		</section>
+        <section class="speciality-section">
+			<div class="container">
+				<div class="section-header sec-header-one text-center aos" data-aos="fade-up">
+					<h2>Medicine and Category</h2>
+				</div>
+				<div class="owl-carousel spciality-slider aos" data-aos="fade-">
+					<div class="spaciality-item" onclick="location.href='product-all.php'">
+						<div class="spaciality-img">
+							<img src="assets/lupicad/indexCategoriesImg/immunity.png" alt="img"></a>
+						</div>
+						<h6><a href="product-all.php">Immunity & hygiene</a></h6>
+					</div>
+					<div class="spaciality-item" onclick="location.href='product-all.php'">
+						<div class="spaciality-img">
+							<img src="assets/lupicad/indexCategoriesImg/women.png" alt="img">
+						</div>
+						<h6><a href="product-all.php">Female Health</a></h6>
+					</div>
+					<div class="spaciality-item" onclick="location.href='product-all.php'">
+						<div class="spaciality-img">
+							<img src="assets/lupicad/indexCategoriesImg/man care.png" alt="img">
+						</div>
+						<h6><a href="product-all.php">Male Health</a></h6>
+					</div>
+					<div class="spaciality-item" onclick="location.href='product-all.php'">
+						<div class="spaciality-img">
+							<img src="assets/lupicad/indexCategoriesImg/hair.png" alt="img">
+						</div>
+						<h6><a href="product-all.php">Hair Care</a></h6>
+					</div>
+					<div class="spaciality-item" onclick="location.href='product-all.php'">
+						<div class="spaciality-img">
+							<img src="assets/lupicad/indexCategoriesImg/joint pain.png" alt="img">
+						</div>
+						<h6><a href="product-all.php">Body & Joint Pain</a></h6>
+					</div>
+
+					<div class="spaciality-item" onclick="location.href='product-all.php'">
+						<div class="spaciality-img">
+							<img src="assets/lupicad/indexCategoriesImg/skin care.png" alt="img">
+						</div>
+						<h6><a href="product-all.php">Skin Care</a></h6>
+					</div>
+					<div class="spaciality-item" onclick="location.href='product-all.php'">
+						<div class="spaciality-img">
+							<img src="assets/lupicad/indexCategoriesImg/breathing.png" alt="img">
+						</div>
+						<h6><a href="product-all.php">Breathing Problem</a></h6>
+					</div>
+
+					<div class="spaciality-item" onclick="location.href='product-all.php'">
+						<div class="spaciality-img">
+							<img src="assets/lupicad/indexCategoriesImg/headach.png" alt="img">
+						</div>
+						<h6><a href="product-all.php">Headache & magrain</a></h6>
+					</div>
+				</div>
+				<!-- <div class="spciality-nav nav-bottom owl-nav"></div> -->
+			</div>
+		</section>
+			</div>
+		</section>
+		<!-- /Home Banner -->
+
+		<!-- List -->
+		
+		<!-- /List -->
+
+		<!-- Banner Section -->
+		<section style="margin: 20px 0px; display: flex; flex-direction: row; align-items: center; gap: 32px; width: 100%;  border-radius: 16px; box-shadow: 0 2px 16px rgba(0,0,0,0.07); padding: 20px 0px;">
+			<div style="width: 40%; display: flex; flex-direction: column; align-items: center; justify-content: center;">
+				<img src="assets/lupicad/50.png" style="width: 50%;" alt="Badge">
+				
+			</div>
+			<div style="width: 70%;  display: flex; align-items: center; flex-direction: column; justify-content: flex-start; gap: 2vw; flex-wrap: wrap;">
+			<div style="margin-top:  16px; color: #fff; font-size: 3rem; font-weight: 700; text-align: center; text-shadow: 0 2px 8px rgba(0,0,0,0.12); letter-spacing: 1px; width: 100%; color: black;">
+				The world is landing on manufacture
+			</div>
+				<div style="display: flex; flex-direction: row; align-items:center;   justify-content: center; gap: 3%; flex-3">
+				<img src="assets/lupicad/1icon.png" style="width: 6vw;" alt="Badge 1">
+				<img src="assets/lupicad/2icon.png" style="width: 6vw;" alt="Badge 2">
+				<img src="assets/lupicad/3icon.jpeg" style="width: 6vw;" alt="Badge 3"> 
+				<img src="assets/lupicad/4icon.png" style="width: 6vw;" alt="Badge 3"> 
+				<img src="assets/lupicad/5icon.png" style="width: 6vw;" alt="Badge 5">
+				<img src="assets/lupicad/6icon.png" style="width: 6vw;" alt="Badge 6">
+				</div>
+			</div>
+		</section>
+		<!-- /Banner Section -->
+
+		<!-- Speciality Section -->
+		
+		<!-- /Speciality Section -->
+		<!-- Product Showcase Section -->
+		<?php require_once(__DIR__ . "/components/indexProductSection.php") ?>
+		<!-- /Doctor Section -->
+
+		<!-- Work Section -->
+
+		<!-- /Work Section -->
+
+		<!-- Services Section -->
+		<!--<section class="services-section aos" data-aos="fade-up" style="background: linear-gradient(90deg, #FFC03E 0%, #ff8d62 100%) !important;">-->
+		<!--	<div class="horizontal-slide d-flex" data-direction="right" data-speed="fast">-->
+		<!--		<div class="slide-list d-flex gap-4">-->
+		<!--			<div class="services-slide">-->
+		<!--				<h6><a href="javascript:void(0);">FREE SHIPPING</a></h6>-->
+		<!--			</div>-->
+		<!--			<div class="services-slide">-->
+		<!--				<h6><a href="javascript:void(0);">SECURED PAYMENT</a></h6>-->
+		<!--			</div>-->
+		<!--			<div class="services-slide">-->
+		<!--				<h6><a href="javascript:void(0);">MEDICINE & SUPPLIES</a></h6>-->
+		<!--			</div>-->
+		<!--			<div class="services-slide">-->
+		<!--				<h6><a href="javascript:void(0);">LAB TESTING</a></h6>-->
+		<!--			</div>-->
+		<!--			<div class="services-slide">-->
+		<!--				<h6><a href="javascript:void(0);">COD AVAILABLE</a></h6>-->
+		<!--			</div>-->
+					<!-- <div class="services-slide">
+		<!--					<h6><a href="javascript:void(0);">Home Care Services</a></h6>-->
+		<!--				</div> --> 
+		<!--		</div>-->
+		<!--	</div>-->
+		<!--</section>-->
+		<!-- /Services Section -->
+
+		<!-- Reasons Section -->
+
+		<!-- /Reasons Section -->
+
+		<!-- Bookus Section -->
+
+		<!-- /Bookus Section -->
+
+		<!-- Testimonial Section -->
+		<section class="article-section">
+			<div class="container">
+				<div class="section-header sec-header-one text-center aos" data-aos="fade-up">
+					<span class="badge badge-primary">Testimonials</span>
+					<h2>15k Users Trust Lupicad Worldwide</h2>
+				</div>
+
+				<!-- Testimonial Slider -->
+				<div class="owl-carousel testimonials-slider aos" data-aos="fade-up">
+					<div class="card shadow-none mb-0">
+						<div class="card-body">
+							<div class="d-flex align-items-center mb-4">
+								<div class="rating d-flex">
+									<i class="fa-solid fa-star filled me-1"></i>
+									<i class="fa-solid fa-star filled me-1"></i>
+									<i class="fa-solid fa-star filled me-1"></i>
+									<i class="fa-solid fa-star filled me-1"></i>
+									<i class="fa-solid fa-star filled"></i>
+								</div>
+								<span>
+									<img src="assets/img/icons/quote-icon.svg" alt="img">
+								</span>
+							</div>
+							<h6 class="fs-16 fw-medium mb-2">Great Customer Support</h6>
+							<p>The team was very helpful and responsive. They guided me well, and the products worked as
+								promised.</p>
+							<div class="d-flex align-items-center">
+								<a href="javascript:void(0);" class="avatar avatar-lg">
+									<img src="assets/img/patients/patient22.jpg" class="rounded-circle" alt="img">
+								</a>
+								<div class="ms-2">
+									<h6 class="mb-1"><a href="javascript:void(0);">Amit Patel</a></h6>
+									<p class="fs-14 mb-0"> Gujarat</p>
+								</div>
+							</div>
+						</div>
+					</div>
+					<div class="card shadow-none mb-0">
+						<div class="card-body">
+							<div class="d-flex align-items-center mb-4">
+								<div class="rating d-flex">
+									<i class="fa-solid fa-star filled me-1"></i>
+									<i class="fa-solid fa-star filled me-1"></i>
+									<i class="fa-solid fa-star filled me-1"></i>
+									<i class="fa-solid fa-star filled me-1"></i>
+									<i class="fa-solid fa-star filled"></i>
+								</div>
+								<span>
+									<img src="assets/img/icons/quote-icon.svg" alt="img">
+								</span>
+							</div>
+							<h6 class="fs-16 fw-medium mb-2">Highly Effective Products</h6>
+							<p>The product quality is excellent and delivers visible results. I feel more confident and
+								healthier than ever.</p>
+							<div class="d-flex align-items-center">
+								<a href="javascript:void(0);" class="avatar avatar-lg">
+									<img src="assets/img/patients/patient21.jpg" class="rounded-circle" alt="img">
+								</a>
+								<div class="ms-2">
+									<h6 class="mb-1"><a href="javascript:void(0);">Rajesh Verma</a></h6>
+									<p class="fs-14 mb-0">Maharashtra</p>
+								</div>
+							</div>
+						</div>
+					</div>
+					<div class="card shadow-none mb-0">
+						<div class="card-body">
+							<div class="d-flex align-items-center mb-4">
+								<div class="rating d-flex">
+									<i class="fa-solid fa-star filled me-1"></i>
+									<i class="fa-solid fa-star filled me-1"></i>
+									<i class="fa-solid fa-star filled me-1"></i>
+									<i class="fa-solid fa-star filled me-1"></i>
+									<i class="fa-solid fa-star filled"></i>
+								</div>
+								<span>
+									<img src="assets/img/icons/quote-icon.svg" alt="img">
+								</span>
+							</div>
+							<h6 class="fs-16 fw-medium mb-2">Professional Consultation</h6>
+							<p>The expert guidance helped me find the right solution. The consultation was smooth,
+								private, and very informative.</p>
+							<div class="d-flex align-items-center">
+								<a href="javascript:void(0);" class="avatar avatar-lg">
+									<img src="assets/img/patients/patient.jpg" class="rounded-circle" alt="img">
+								</a>
+								<div class="ms-2">
+									<h6 class="mb-1"><a href="javascript:void(0);"> Priya Sharma</a></h6>
+									<p class="fs-14 mb-0">Delhi</p>
+								</div>
+							</div>
+						</div>
+					</div>
+					<div class="card shadow-none mb-0">
+						<div class="card-body">
+							<div class="d-flex align-items-center mb-4">
+								<div class="rating d-flex">
+									<i class="fa-solid fa-star filled me-1"></i>
+									<i class="fa-solid fa-star filled me-1"></i>
+									<i class="fa-solid fa-star filled me-1"></i>
+									<i class="fa-solid fa-star filled me-1"></i>
+									<i class="fa-solid fa-star filled"></i>
+								</div>
+								<span>
+									<img src="assets/img/icons/quote-icon.svg" alt="img">
+								</span>
+							</div>
+							<h6 class="fs-16 fw-medium mb-2">Trusted & Safe</h6>
+							<p>I was hesitant at first, but the products are completely safe and effective. Great
+								experience overall!</p>
+							<div class="d-flex align-items-center">
+								<a href="javascript:void(0);" class="avatar avatar-lg">
+									<img src="assets/lupicad/NoProfileImg.jpg" class="rounded-circle"
+										style="border:2px solid rgba(0, 0, 0, 0.5) ;" alt="img">
+								</a>
+								<div class="ms-2">
+									<h6 class="mb-1"><a href="javascript:void(0);">Neha Reddy</a></h6>
+									<p class="fs-14 mb-0">Karnataka</p>
+								</div>
+							</div>
+						</div>
+					</div>
+				</div>
+				<!-- /Testimonial Slider -->
+
+				<!-- Counter -->
+				<div class="testimonial-counter">
+					<div class="row row-cols-1 row-cols-sm-2 row-cols-md-3 row-cols-lg-5 row-gap-4">
+						<div class="counter-item text-center aos" data-aos="fade-up">
+							<h6 class="display-6"><span class="count-digit">250</span>+</h6>
+							<p>Product Available</p>
+						</div>
+						<div class="counter-item text-center aos" data-aos="fade-up"">
+								<h6 class=" display-6 secondary-count"><span class="count-digit">18</span> L+</h6>
+							<p>Satisfied Customers</p>
+						</div>
+						<div class="counter-item text-center aos" data-aos="fade-up">
+							<h6 class="display-6 purple-count"><span class="count-digit">8</span>K</h6>
+							<p>Product Sell Per week</p>
+						</div>
+						<div class="counter-item text-center aos" data-aos="fade-up">
+							<h6 class="display-6 pink-count"><span class="count-digit">47</span>+</h6>
+							<p>sexologist Doctors</p>
+						</div>
+						<div class="counter-item text-center  aos" data-aos="fade-up">
+							<h6 class="display-6 warning-count"><span class="count-digit">317</span>+</h6>
+							<p>Lab Tests Available</p>
+						</div>
+					</div>
+				</div>
+				<!-- /Counter -->
+
+			</div>
+		</section>
+		<!-- /Testimonial Section -->
+
+
+		<!-- Banner Section -->
+		<!--<section style="margin: 20px 0px;">-->
+		<!--	<img src="assets/lupicad/IndexLastBannerImg.jpeg" alt="">-->
+		<!--</section>-->
+		<section class="gallery-section ">
+		  <div class="container">
+			<div class="section-header sec-header-one text-center aos" data-aos="fade-up">
+			  <span class="badge badge-primary">Top sale</span>
+			  <h2>Our Best Products</h2>
+			</div>
+			<div class="row gallery-row">
+			 <div class="col-md-3 col-sm-6 mb-4 "> 
+			  <a href="assets/lupicad/img1.jpg" class="gallery-item" data-lightbox="gallery"> 
+				  <img src="assets/lupicad/img1.jpg" class="img-fluid" alt="Gallery Image 1"> 
+			  
+			 </a>
+			 </div>
+			  <div class="col-md-3 col-sm-6 mb-4">
+				<a href="assets/lupicad/2.png" class="gallery-item" data-lightbox="gallery">
+				  <img src="assets/lupicad/img2.jpg" class="img-fluid" alt="Gallery Image 2">
+				</a>
+			  </div>
+			  <div class="col-md-3 col-sm-6 mb-4">
+				<a href="assets/lupicad/3.png" class="gallery-item" data-lightbox="gallery">
+				  <img src="assets/lupicad/img3.jpg" class="img-fluid" alt="Gallery Image 3">
+				</a>
+			  </div>
+			  <div class="col-md-3 col-sm-6 mb-4">
+				<a href="assets/lupicad/3.png" class="gallery-item" data-lightbox="gallery">
+				  <img src="assets/lupicad/img4.jpg" class="img-fluid" alt="Gallery Image 3">
+				</a>
+			  </div>
+			  <div class="row gallery-row">
+			 <div class="col-md-3 col-sm-6 mb-4 "> 
+			  <a href="assets/lupicad/img1.jpg" class="gallery-item" data-lightbox="gallery"> 
+				  <img src="assets/lupicad/img4 (2).jpg" class="img-fluid" alt="Gallery Image 1"> 
+			  
+			 </a>
+			 </div>
+			  <div class="col-md-3 col-sm-6 mb-4">
+				<a href="assets/lupicad/2.png" class="gallery-item" data-lightbox="gallery">
+				  <img src="assets/lupicad/img5.jpg" class="img-fluid" alt="Gallery Image 2">
+				</a>
+			  </div>
+			  <div class="col-md-3 col-sm-6 mb-4">
+				<a href="assets/lupicad/3.png" class="gallery-item" data-lightbox="gallery">
+				  <img src="assets/lupicad/img6.jpg" class="img-fluid" alt="Gallery Image 3">
+				</a>
+			  </div>
+			  <div class="col-md-3 col-sm-6 mb-4">
+				<a href="assets/lupicad/3.png" class="gallery-item" data-lightbox="gallery">
+				  <img src="assets/lupicad/img7.jpg" class="img-fluid" alt="Gallery Image 3">
+				</a>
+			  </div>
+			  <!-- Add more images as needed -->
+			</div>
+		  </div>
+		</section>
+		<!-- /Banner Section -->
+
+		<!-- FAQ Section -->
+
+		<section class="faq-section-one">
+			<div class="container">
+				<div class="section-header sec-header-one text-center aos" data-aos="fade-up">
+					<span class="badge badge-primary">FAQ'S</span>
+					<h2>Your Questions are Answered</h2>
+				</div>
+				<div class="row">
+					<div class="col-md-10 mx-auto">
+						<div class="faq-info aos" data-aos="fade-up">
+							<div class="accordion" id="faq-details">
+
+								<!-- FAQ Item -->
+								<div class="accordion-item">
+									<h2 class="accordion-header" id="headingOne">
+										<a href="javascript:void(0);" class="accordion-button" data-bs-toggle="collapse"
+											data-bs-target="#collapseOne" aria-expanded="true"
+											aria-controls="collapseOne">
+											What is Lupicad Healthcare?
+
+										</a>
+									</h2>
+									<div id="collapseOne" class="accordion-collapse collapse show"
+										aria-labelledby="headingOne" data-bs-parent="#faq-details">
+										<div class="accordion-body">
+											<div class="accordion-content">
+												<p>Lupicad Healthcare is a healthcare-focused company committed to improving lives through innovative, reliable, and accessible health products and services. We specialize in [Unani & ayurveda, wellness solutions].</p>
+											</div>
+										</div>
+									</div>
+								</div>
+								<!-- /FAQ Item -->
+
+								<!-- FAQ Item -->
+								<div class="accordion-item">
+									<h2 class="accordion-header" id="headingTwo">
+										<a href="javascript:void(0);" class="accordion-button collapsed"
+											data-bs-toggle="collapse" data-bs-target="#collapseTwo"
+											aria-expanded="false" aria-controls="collapseTwo">
+											Where is Lupicad Healthcare located?
+
+										</a>
+									</h2>
+									<div id="collapseTwo" class="accordion-collapse collapse"
+										aria-labelledby="headingTwo" data-bs-parent="#faq-details">
+										<div class="accordion-body">
+											<div class="accordion-content">
+												<p>Our headquarters are located in Delhi. We also operate through a network of partners and distributors globally. Visit our Contact page for specific location details.</p>
+											</div>
+										</div>
+									</div>
+								</div>
+								<!-- /FAQ Item -->
+
+								<!-- FAQ Item -->
+								<div class="accordion-item">
+									<h2 class="accordion-header" id="headingThree">
+										<a href="javascript:void(0);" class="accordion-button collapsed"
+											data-bs-toggle="collapse" data-bs-target="#collapseThree"
+											aria-expanded="false" aria-controls="collapseThree">
+											How can I get in touch with Lupicad Healthcare?
+
+										</a>
+									</h2>
+									<div id="collapseThree" class="accordion-collapse collapse"
+										aria-labelledby="headingThree" data-bs-parent="#faq-details">
+										<div class="accordion-body">
+											<div class="accordion-content">
+												<p> You can reach us through our Contact Us page, via email at [email address], or by calling our customer support line at +91-97183 88999.</p>
+											</div>
+										</div>
+									</div>
+								</div>
+								<!-- /FAQ Item -->
+
+								<!-- FAQ Item -->
+								<div class="accordion-item">
+									<h2 class="accordion-header" id="headingFour">
+										<a href="javascript:void(0);" class="accordion-button collapsed"
+											data-bs-toggle="collapse" data-bs-target="#collapseFour"
+											aria-expanded="false" aria-controls="collapseFour">
+											What kind of products does Lupicad Healthcare offer?
+
+										</a>
+									</h2>
+									<div id="collapseFour" class="accordion-collapse collapse"
+										aria-labelledby="headingFour" data-bs-parent="#faq-details">
+										<div class="accordion-body">
+											<div class="accordion-content">
+												<p>We offer a wide range of healthcare solutions, including wellness supplements, diagnostic kits, medical devices, etc.]. For a detailed list, contact us on +91-9718388999.</p>
+											</div>
+										</div>
+									</div>
+								</div>
+								<!-- /FAQ Item -->
+
+								<!-- FAQ Item -->
+								<div class="accordion-item">
+									<h2 class="accordion-header" id="headingFive">
+										<a href="javascript:void(0);" class="accordion-button collapsed"
+											data-bs-toggle="collapse" data-bs-target="#collapseFive"
+											aria-expanded="false" aria-controls="collapseFive">
+										Are Lupicad products safe and certified?
+
+										</a>
+									</h2>
+									<div id="collapseFive" class="accordion-collapse collapse"
+										aria-labelledby="headingFive" data-bs-parent="#faq-details">
+										<div class="accordion-body">
+											<div class="accordion-content">
+												<p>Yes. All our products are developed in compliance with national and international regulatory standards. We ensure rigorous quality control and testing processes to guarantee safety and efficacy.
+												</p>
+											</div>
+										</div>
+									</div>
+								</div>
+								<!-- /FAQ Item -->
+
+							</div>
+						</div>
+
+					</div>
+				</div>
+			</div>
+		</section>
+
+		<!-- App Section -->
+
+		<!-- /App Section -->
+
+		<!-- Article Section -->
+		<section class="article-section">
+			<div class="container">
+				<div class="section-header sec-header-one text-center aos" data-aos="fade-up">
+					<span class="badge badge-primary">Recent Blogs</span>
+					<h2>Stay Updated With Our Latest Blog</h2>
+				</div>
+				<div class="row g-4">
+					<div class="col-lg-6">
+						<div class="article-item aos" data-aos="fade-up">
+							<div class="article-img">
+								<a href="blog-details.php">
+									<img src="assets/lupicad/IndexBlog/Relationship.png" class="img-fluid" alt="img">
+								</a>
+
+							</div>
+							<div class="article-info">
+								<span class="badge badge-cyan mb-2">Relationship</span>
+								<h6 class="mb-2"><a href="blog-details.php">The Power of Intimacy in a Relationship</a>
+								</h6>
+								<p>Intimacy is the foundation of a strong and lasting relationship. It goes beyond
+									physical closeness and encompasses emotional, mental, and even spiritual connections
+									between partners. In today's fast-paced world, nurturing intimacy can sometimes take
+									a backseat, but prioritizing it is essential for a fulfilling and harmonious bond.
+
+								</p>
+							</div>
+						</div>
+					</div>
+					<div class="col-lg-6">
+						<div class="article-item aos" data-aos="fade-up">
+							<div class="article-img">
+								<a href="blog-details.php">
+									<img src="assets/lupicad/IndexBlog/Health.png" class="img-fluid" alt="img">
+								</a>
+
+							</div>
+							<div class="article-info">
+								<span class="badge badge-cyan mb-2">Health</span>
+								<h6 class="mb-2"><a href="blog-details.php">The Power of a Healthy Lifestyle
+
+									</a></h6>
+								<p>Maintaining good health is essential for a happy and fulfilling life. A healthy
+									lifestyle not only improves physical well-being but also boosts mental and emotional
+									health. In today's busy world, prioritizing health can sometimes be challenging, but
+									small, consistent efforts can make a significant impact.</p>
+							</div>
+						</div>
+					</div>
+					<div class="col-lg-6">
+						<div class="article-item aos" data-aos="fade-up">
+							<div class="article-img">
+								<a href="blog-details.php">
+									<img src="assets/lupicad/IndexBlog/Immunity.png" class="img-fluid" alt="img">
+								</a>
+
+							</div>
+							<div class="article-info">
+								<span class="badge badge-cyan mb-2">Immunity</span>
+								<h6 class="mb-2"><a href="blog-details.php">Boosting Immunity for a Healthier Life</a>
+								</h6>
+								<p>A strong immune system is the body's natural defense against illnesses, infections,
+									and diseases. Maintaining good immunity requires a combination of healthy lifestyle
+									choices, proper nutrition, and positive daily habits. In today's world, where
+									exposure to viruses and bacteria is common, prioritizing immunity is more important
+									than ever.</p>
+							</div>
+						</div>
+					</div>
+					<div class="col-lg-6">
+						<div class="article-item aos" data-aos="fade-up">
+							<div class="article-img">
+								<a href="blog-details.php">
+									<img src="assets/lupicad/IndexBlog/Stamina.png" class="img-fluid" alt="img">
+								</a>
+
+							</div>
+							<div class="article-info">
+								<span class="badge badge-cyan mb-2">Stamina</span>
+								<h6 class="mb-2"><a href="blog-details.php">Enhancing Performance and Intimacy</a></h6>
+								<p>A fulfilling and intimate relationship is built on trust, communication, and
+									emotional connection. Physical intimacy plays a vital role in strengthening the bond
+									between partners, creating a deeper sense of closeness and passion. Prioritizing a
+									healthy and satisfying love life contributes to overall relationship happiness and
+									well-being.</p>
+							</div>
+						</div>
+					</div>
+				</div>
+				<div class="text-center load-item aos" data-aos="fade-up">
+					<a href="blog-list.php" class="btn btn-dark">View All <i
+							class="isax isax-arrow-right-3 ms-2"></i></a>
+				</div>
+			</div>
+		</section>
+		<div class="list-section">
+			<div class="container">
+				<div class="list-card card mb-0">
+					<div class="card-body">
+						<div
+							class="d-flex align-items-center justify-content-center justify-content-xl-between flex-wrap gap-4 list-wraps">
+							 <a href="booking.php" class="list-item aos" data-aos="fade-up">
+									<div class="list-icon bg-secondary">
+										<img src="assets/img/icons/list-icon-01.svg" alt="img">
+									</div>
+									<h6> ORDER TRACKING</h6>
+								</a>  
+							<a href="javascript:void(0)" class="list-item aos" data-aos="fade-up">
+								<div class="list-icon bg-pink"> 
+									<i class="fa-solid fa-truck-fast"></i>
+								</div>
+								<h6>FREE SHIPPING</h6>
+							</a>
+							<a href="javascript:void(0)" class="list-item aos" data-aos="fade-up">
+								<div class="list-icon bg-cyan"> 
+									<i class="fa-solid fa-credit-card"></i>
+								</div>
+								<h6>SECURED PAYMENT</h6>
+							</a>
+							<a href="javascript:void(0)" class="list-item aos" data-aos="fade-up">
+								<div class="list-icon bg-purple"> 
+									<i class="fa-solid fa-syringe"></i>
+								</div>
+								<h6>MEDICINE & SUPPLIES</h6>
+							</a>
+							<a href="javascript:void(0)" class="list-item aos" data-aos="fade-up">
+								<div class="list-icon bg-orange"> 
+									<i class="fa-solid fa-flask"></i>
+								</div>
+								<h6>LAB TESTING</h6>
+							</a>
+							<a href="javascript:void(0)" class="list-item aos" data-aos="fade-up">
+								<div class="list-icon bg-teal">
+									<i class="fa-solid fa-truck-ramp-box"></i> 
+								</div>
+								<h6>COD AVAILABLE</h6>
+							</a>
+						</div>
+					</div>
+				</div>
+			</div>
+		</div>
+		<!-- /Article Section -->
+		<section class="work-section">
+			<div class="container">
+				<div class="row">
+					<div class="col-lg-4 col-md-12 work-img-info aos" data-aos="fade-up">
+						<div class="work-img">
+							<img src="assets/lupicad/About/AboutColorBoxSectionImg.png" class="img-fluid"
+								alt="doctor-image">
+						</div>
+					</div>
+					<div class="col-lg-8 col-md-12 work-details">
+						<div class="section-header-one aos" data-aos="fade-up">
+							<h5>How it Works</h5>
+							<h2 class="section-title">4 easy steps to get your solution</h2>
+						</div>
+						<div class="row">
+							<div class="col-lg-6 col-md-6 aos" data-aos="fade-up">
+								<div class="work-info">
+									<div class="work-icon">
+										<span><img src="assets/lupicad/IndexIcon/1.png" alt="search-doctor-icon"></span>
+									</div>
+									<div class="work-content">
+										<h5>Search Medicine</h5>
+										<p>Search for the medicine you need based on its name, category, or usage.</p>
+									</div>
+								</div>
+							</div>
+							<div class="col-lg-6 col-md-6 aos" data-aos="fade-up">
+								<div class="work-info">
+									<div class="work-icon">
+										<span><img src="assets/lupicad/IndexIcon/2.png" alt="doctor-profile-icon"></span>
+									</div>
+									<div class="work-content">
+										<h5>Check Medicine Details</h5>
+										<p>Explore detailed information about the medicine, including its dosage, side
+											effects, and reviews.</p>
+									</div>
+								</div>
+							</div>
+							<div class="col-lg-6 col-md-6 aos" data-aos="fade-up">
+								<div class="work-info">
+									<div class="work-icon">
+										<span><img src="assets/lupicad/IndexIcon/3.png" alt="calendar-icon"></span>
+									</div>
+									<div class="work-content">
+										<h5>Add to Cart</h5>
+										<p>Once you've found the right medicine, add it to your cart and proceed to
+											checkout.</p>
+									</div>
+								</div>
+							</div>
+							<div class="col-lg-6 col-md-6 aos" data-aos="fade-up">
+								<div class="work-info">
+									<div class="work-icon">
+										<span><img src="assets/lupicad/IndexIcon/4.png" alt="solution-icon"></span>
+									</div>
+									<div class="work-content">
+										<h5>Get Your Medicine Delivered</h5>
+										<p>Complete your order and have your medicine delivered to your doorstep with
+											ease.</p>
+									</div>
+								</div>
+							</div>
+						</div>
+					</div>
+				</div>
+			</div>
+		</section>
+
+		<!-- Info Section -->
+		<section class="info-section">
+			<div class="container">
+				<div class="contact-info" style="background: linear-gradient(90deg, #003406 0%, #229e1f 100%) !important;">
+					<div class="d-lg-flex align-items-center justify-content-between w-100 gap-4">
+						<div class="mb-4 mb-lg-0 aos" data-aos="fade-up">
+							<h6 class="display-6 text-white">Working for Your Better Health.</h6>
+						</div>
+						<div class="d-sm-flex align-items-center justify-content-lg-end gap-4 aos" data-aos="fade-up">
+							<div class="con-info d-flex align-items-center mb-3 mb-sm-0">
+								<span class="con-icon">
+									<i class="isax isax-headphone"></i>
+								</span>
+								<div class="ms-2">
+									<p class="text-white mb-1">Customer Support</p>
+									<p class="text-white fw-medium mb-0"><a href="callto:+91 9718388999"
+											style="color: white;">+91 9718388999</a></p>
+								</div>
+							</div>
+							<div class="con-info d-flex align-items-center">
+								<span class="con-icon">
+									<i class="isax isax-message-2"></i>
+								</span>
+								<div class="ms-2">
+									<p class="text-white mb-1">Drop Us an Email</p>
+									<p class="text-white fw-medium mb-0"><a href="mailto:info@lupicad.com"
+											style="color:white;"
+											data-cfemail="8de4e3ebe2bcbfb8bbcde8f5ece0fde1e8a3eee2e0">info@lupicad.com</a>
+									</p>
+								</div>
+							</div>
+						</div>
+					</div>
+				</div>
+			</div>
+		</section>
+		<!-- /Info Section -->
+		<!-- Info Section -->
+		<section class="partners-section">
+			<div class="container">
+				<div class="row">
+					<div class="col-md-12">
+						<div class="section-header-one text-center aos" data-aos="fade-up">
+							<h2 class="section-title">Our Certificates</h2>
+						</div>
+					</div>
+				</div>
+				<div class="partners-info aos" data-aos="fade-up">
+					<ul class="owl-carousel partners-slider d-flex">
+						<li>
+							<a href="javascript:void(0);">
+								<img class="img-fluid" src="assets/lupicad/CERTIFICATES/1.png" alt="partners">
+							</a>
+						</li>
+						<li>
+							<a href="javascript:void(0);">
+								<img class="img-fluid" src="assets/lupicad/CERTIFICATES/2.png" alt="partners">
+							</a>
+						</li>
+						<li>
+							<a href="javascript:void(0);">
+								<img class="img-fluid" src="assets/lupicad/CERTIFICATES/3.png" alt="partners">
+							</a>
+						</li>
+						<li>
+							<a href="javascript:void(0);">
+								<img class="img-fluid" src="assets/lupicad/CERTIFICATES/4.png" alt="partners">
+							</a>
+						</li>
+						<li>
+							<a href="javascript:void(0);">
+								<img class="img-fluid" src="assets/lupicad/CERTIFICATES/5.png" alt="partners">
+							</a>
+						</li>
+						<li>
+							<a href="javascript:void(0);">
+								<img class="img-fluid" src="assets/lupicad/CERTIFICATES/6.png" alt="partners">
+							</a>
+						</li>
+						<!-- <li>
+						    	<a href="javascript:void(0);">
+						    		<img class="img-fluid" src="assets/img/partners/partners-1.svg" alt="partners">
+						    	</a>
+						    </li>
+						    <li>
+						    	<a href="javascript:void(0);">
+						    		<img class="img-fluid" src="assets/img/partners/partners-2.svg" alt="partners">
+						    	</a>
+						    </li>
+						    <li>
+						    	<a href="javascript:void(0);">
+						    		<img class="img-fluid" src="assets/img/partners/partners-3.svg" alt="partners">
+						    	</a>
+						    </li>
+						    <li>
+						    	<a href="javascript:void(0);">
+						    		<img class="img-fluid" src="assets/img/partners/partners-4.svg" alt="partners">
+						    	</a>
+						    </li>
+						    <li>
+						    	<a href="javascript:void(0);">
+						    		<img class="img-fluid" src="assets/img/partners/partners-5.svg" alt="partners">
+						    	</a>
+						    </li>
+						    <li>
+						    	<a href="javascript:void(0);">
+						    		<img class="img-fluid" src="assets/img/partners/partners-6.svg" alt="partners">
+						    	</a>
+						    </li> -->
+					</ul>
+				</div>
+			</div>
+		</section>
+		<!-- /Info Section -->
+
+		<!-- Footer Section -->
+		<?php require_once(__DIR__ . "/components/footer.php") ?>
+
+		<!-- /Footer Section -->
+
+		<!-- Cursor -->
+	
+		<!-- /Cursor -->
+
+	</div>
+	<!-- /Main Wrapper -->
+
+	<!-- jQuery -->
+	<script data-cfasync="false" src="../../cdn-cgi/scripts/5c5dd728/cloudflare-static/email-decode.min.js"></script>
+	<script src="assets/js/jquery-3.7.1.min.js" type="290daf7fcf744922b4c3c7cf-text/javascript"></script>
+
+	<!-- Bootstrap Bundle JS -->
+	<script src="assets/js/bootstrap.bundle.min.js" type="290daf7fcf744922b4c3c7cf-text/javascript"></script>
+
+	<!-- Feather Icon JS -->
+	<script src="assets/js/feather.min.js" type="290daf7fcf744922b4c3c7cf-text/javascript"></script>
+
+	<!-- select JS -->
+	<script src="assets/plugins/select2/js/select2.min.js" type="290daf7fcf744922b4c3c7cf-text/javascript"></script>
+
+	<!-- Datepicker JS -->
+	<script src="assets/js/moment.min.js" type="290daf7fcf744922b4c3c7cf-text/javascript"></script>
+	<script src="assets/js/bootstrap-datetimepicker.min.js" type="290daf7fcf744922b4c3c7cf-text/javascript"></script>
+
+	<!-- Owl Carousel JS -->
+	<script src="assets/js/owl.carousel.min.js" type="290daf7fcf744922b4c3c7cf-text/javascript"></script>
+
+	<!-- Counter JS -->
+	<script src="assets/js/counter.js" type="290daf7fcf744922b4c3c7cf-text/javascript"></script>
+
+	<!-- Animation JS -->
+	<script src="assets/js/aos.js" type="290daf7fcf744922b4c3c7cf-text/javascript"></script>
+
+	<!-- Custom JS -->
+	<script src="assets/js/script.js" type="290daf7fcf744922b4c3c7cf-text/javascript"></script>
+
+	<script src="../../cdn-cgi/scripts/7d0fa10a/cloudflare-static/rocket-loader.min.js"
+		data-cf-settings="290daf7fcf744922b4c3c7cf-|49" defer></script>
+	<script defer
+		src="https://static.cloudflareinsights.com/beacon.min.js/vcd15cbe7772f49c399c6a5babf22c1241717689176015"
+		integrity="sha512-ZpsOmlRQV6y907TI0dKBHq9Md29nnaEIPlkf84rnaERnq6zvWvPUqr2ft8M1aS28oN72PdrCzSjY4U6VaAw1EQ=="
+		data-cf-beacon='{"rayId":"926c475fd88591a3","version":"2025.1.0","serverTiming":{"name":{"cfExtPri":true,"cfL4":true,"cfSpeedBrain":true,"cfCacheStatus":true}},"token":"3ca157e612a14eccbb30cf6db6691c29","b":1}'
+		crossorigin="anonymous"></script>
+
+	<script type="text/javascript">
+		$(document).ready(function() {
+			// Initialize Slick Slider
+			$('.image-slider .slider-container').slick({
+				autoplay: true, // Auto slide images
+				autoplaySpeed: 3000, // Slide interval in milliseconds (3 seconds)
+				dots: false, // Show navigation dots
+				arrows: false, // Disable left/right arrows
+				infinite: true, // Enable infinite loop
+				speed: 500, // Transition speed (500ms)
+				fade: false, // Disable fade effect (slide effect instead)
+				pauseOnHover: true // Pause auto-sliding when hovering over the slider
+			});
+		});
+	</script>
+
+	<script>
+		document.querySelectorAll('.product-title').forEach(function(el) {
+			const maxLength = 30;
+			const originalText = el.textContent.trim();
+			if (originalText.length > maxLength) {
+				el.textContent = originalText.slice(0, maxLength) + '...';
+			}
+		});
+	</script>
+	<script src="https://cdnjs.cloudflare.com/ajax/libs/lightbox2/2.11.4/js/lightbox.min.js"></script>
+</body>
+</html>
