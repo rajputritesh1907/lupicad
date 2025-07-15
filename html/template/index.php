@@ -542,7 +542,7 @@ $faqs = [
 		<!--<section style="margin: 20px 0px;">-->
 		<!--	<img src="assets/lupicad/IndexLastBannerImg.jpeg" alt="">-->
 		<!--</section>-->
-		<section class="px-4 py-6">
+		<section class="container-box">
 			<div class="flex flex-wrap -mx-2"> 
 				<div class="w-full sm:w-1/2 md:w-1/3 lg:w-1/5 px-2 mb-4">
 					<div class="overflow-hidden">
