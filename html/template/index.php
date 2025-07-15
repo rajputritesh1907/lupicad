@@ -69,19 +69,40 @@ if (session_status() === PHP_SESSION_NONE) {
 	<script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.6.0/jquery.min.js"></script>
 	<script type="text/javascript"
 		src="https://cdnjs.cloudflare.com/ajax/libs/slick-carousel/1.8.1/slick.min.js"></script>
-
+		<script src="https://cdn.tailwindcss.com"></script>
 
 	<!-- Inline CSS for Styling -->
 	<style>
+		/* my css */
+	.curved-section {
+      border-radius: 100% 100% 100% 100% / 30%;
+      padding-top: 4rem;
+      padding-bottom: 4rem;
+      position: relative;
+    }
+
+    .curved-section::before {
+      content: "";
+      position: absolute;
+      top: -100%;
+      left: 0;
+      width: 100%;
+      height: 100%;
+      background-color: #31c5e2;
+      border-radius: 100% 100% 0 0 / 30%;
+      z-index: -1;
+    }
+		.container-box{
+			padding: 0px 50px;
+		}
+		
 		.image-slider {
 			width: 100%;
 			margin: 0 auto;
 		}
-
 		.slider-container {
 			width: 100%;
 		}
-
 		.slider-container img {
 			width: 100%;
 			object-fit: cover;
@@ -98,9 +119,17 @@ if (session_status() === PHP_SESSION_NONE) {
 		  border-radius: 8px;
 		  transition: transform 0.2s;
 		  box-shadow: 0 2px 8px rgba(0,0,0,0.08);
+		  width: 100%;
+		  height: auto;
 		}
 		.gallery-item img:hover {
 		  transform: scale(1.05);
+		}
+		@media (max-width: 767.98px) {
+		  .gallery-row {
+			flex-direction: column;
+			align-items: center;
+		  }
 		}
 	</style>
 
@@ -120,18 +149,48 @@ if (session_status() === PHP_SESSION_NONE) {
 			<!-- Image Slider Container -->
 			<div class="image-slider" style="width: 100%; margin: 0 auto; overflow: hidden;">
 				<div class="slider-container">
-					<div><img src="assets/img/banner/1banner (2).jpg" alt="patient-image" style="width: 100%; object-fit: cover;"></div>
-					<div><img src="assets/lupicad/2banner.png" alt="patient-image" style="width: 100%; object-fit: cover;"></div>
-					<div><img src="assets/lupicad/3banner.png" alt="patient-image" style="width: 100%; object-fit: cover;"></div>
+				<div><img src="assets/lupicad/iconslupicad/LupucatHeroBannner.jpg" alt="patient-image" style="width: 100%; object-fit: cover;"></div>
+				<div><img src="assets/lupicad/iconslupicad/womenProductsBanner.jpg" alt="patient-image" style="width: 100%; object-fit: cover;"></div>
+			  <div><img src="assets/img/banner/1banner (2).jpg" alt="patient-image" style="width: 100%; object-fit: cover;"></div>  
+					<!-- <div><img src="assets/lupicad/2banner.png" alt="patient-image" style="width: 100%; object-fit: cover;"></div> -->  
+					<!-- <div><img src="assets/lupicad/3banner.png" alt="patient-image" style="width: 100%; object-fit: cover;"></div> -->
 				</div>
 			</div>
-            <section style="margin: 20px 0px; display: flex; flex-direction: row; gap: 20px; background: linear-gradient(90deg, #007cf0 0%, #00dfd8 100%);">
+			</section>
+
+			<!-- my try -->
+			<div class="relative overflow-hidden bg-[#31c5e2] curved-section z-0 px-4 py-10">
+  <div class="flex flex-col md:flex-row justify-center items-center gap-4 md:gap-6">
+
+    <!-- Image Card 1 -->
+    <div class="w-full md:w-1/3">
+      <img src="assets/lupicad/offercard/3.png" alt="Image 3" class="rounded w-full object-cover" />
+    </div>
+
+    <!-- Image Card 2 -->
+    <div class="w-full md:w-1/3">
+      <img src="assets/lupicad/offercard/1.png" alt="Image 2" class="rounded w-full object-cover" />
+    </div>
+
+    <!-- Image Card 3 -->
+    <div class="w-full md:w-1/3">
+      <img src="assets/lupicad/offercard/2.png" alt="Image 1" class="rounded w-full object-cover" />
+    </div>
+
+  </div>
+</div>
+		<!-- try -->
+
+
+
+
+            <!-- <section style="margin: 20px 0px; display: flex; flex-direction: row; gap: 20px; background: linear-gradient(90deg, #007cf0 0%, #00dfd8 100%);">
 			<center><img src="assets/lupicad/fg.png" style="width: 90%" alt="Badges"></center> 
-		</section>
+		</section> -->
 			<!-- Optional Background -->
-			<div class="banner-bg">
+			
 			    		<section class="services-section aos" data-aos="fade-up" style="background: linear-gradient(90deg, #FFC03E 0%, #ff8d62 100%) !important;">
-			<div class="horizontal-slide d-flex" data-direction="right" data-speed="fast">
+			     <div class="horizontal-slide d-flex" data-direction="right" data-speed="fast">
 				<div class="slide-list d-flex gap-4">
 					<div class="services-slide">
 						<h6><a href="javascript:void(0);">FREE SHIPPING</a></h6>
@@ -155,67 +214,69 @@ if (session_status() === PHP_SESSION_NONE) {
 			</div>
 		</section>
         <section class="speciality-section">
-			<div class="container">
-				<div class="section-header sec-header-one text-center aos" data-aos="fade-up">
+			<div class="container-box">
+				<div class="section-header sec-header-one text-start aos" data-aos="fade-up">
 					<h2>Medicine and Category</h2>
 				</div>
 				<div class="owl-carousel spciality-slider aos" data-aos="fade-">
+					
 					<div class="spaciality-item" onclick="location.href='product-all.php'">
 						<div class="spaciality-img">
-							<img src="assets/lupicad/indexCategoriesImg/immunity.png" alt="img"></a>
-						</div>
-						<h6><a href="product-all.php">Immunity & hygiene</a></h6>
-					</div>
-					<div class="spaciality-item" onclick="location.href='product-all.php'">
-						<div class="spaciality-img">
-							<img src="assets/lupicad/indexCategoriesImg/women.png" alt="img">
-						</div>
-						<h6><a href="product-all.php">Female Health</a></h6>
-					</div>
-					<div class="spaciality-item" onclick="location.href='product-all.php'">
-						<div class="spaciality-img">
-							<img src="assets/lupicad/indexCategoriesImg/man care.png" alt="img">
+							<img src="assets/lupicad/iconslupicad/men.png" alt="img">
 						</div>
 						<h6><a href="product-all.php">Male Health</a></h6>
 					</div>
 					<div class="spaciality-item" onclick="location.href='product-all.php'">
 						<div class="spaciality-img">
-							<img src="assets/lupicad/indexCategoriesImg/hair.png" alt="img">
+							<img src="assets/lupicad/iconslupicad/Hair.png" alt="img">
 						</div>
 						<h6><a href="product-all.php">Hair Care</a></h6>
 					</div>
 					<div class="spaciality-item" onclick="location.href='product-all.php'">
 						<div class="spaciality-img">
-							<img src="assets/lupicad/indexCategoriesImg/joint pain.png" alt="img">
+							<img src="assets/lupicad/iconslupicad/pain.png" alt="img">
 						</div>
 						<h6><a href="product-all.php">Body & Joint Pain</a></h6>
 					</div>
 
 					<div class="spaciality-item" onclick="location.href='product-all.php'">
 						<div class="spaciality-img">
-							<img src="assets/lupicad/indexCategoriesImg/skin care.png" alt="img">
+							<img src="assets/lupicad/iconslupicad/skin.png" alt="img">
 						</div>
 						<h6><a href="product-all.php">Skin Care</a></h6>
 					</div>
 					<div class="spaciality-item" onclick="location.href='product-all.php'">
 						<div class="spaciality-img">
-							<img src="assets/lupicad/indexCategoriesImg/breathing.png" alt="img">
+							<img src="assets/lupicad/iconslupicad/women.png" alt="img">
+						</div>
+						<h6><a href="product-all.php">Female Health</a></h6>
+					</div>
+					<div class="spaciality-item" onclick="location.href='product-all.php'">
+						<div class="spaciality-img">
+							<img src="assets/lupicad/iconslupicad/cough.png" alt="img">
 						</div>
 						<h6><a href="product-all.php">Breathing Problem</a></h6>
 					</div>
 
 					<div class="spaciality-item" onclick="location.href='product-all.php'">
 						<div class="spaciality-img">
-							<img src="assets/lupicad/indexCategoriesImg/headach.png" alt="img">
+							<img src="assets/lupicad/iconslupicad/headache.png" alt="img">
 						</div>
 						<h6><a href="product-all.php">Headache & magrain</a></h6>
 					</div>
+					<div class="spaciality-item" onclick="location.href='product-all.php'">
+						<div class="spaciality-img">
+							<img src="assets/lupicad/iconslupicad/immunity.png" alt="img"></a>
+						</div>
+						<h6><a href="product-all.php">Immunity & hygiene</a></h6>
+					</div>
+					
 				</div>
 				<!-- <div class="spciality-nav nav-bottom owl-nav"></div> -->
 			</div>
 		</section>
-			</div>
-		</section>
+			
+	
 		<!-- /Home Banner -->
 
 		<!-- List -->
@@ -292,7 +353,7 @@ if (session_status() === PHP_SESSION_NONE) {
 
 		<!-- Testimonial Section -->
 		<section class="article-section">
-			<div class="container">
+			<div class="container-box">
 				<div class="section-header sec-header-one text-center aos" data-aos="fade-up">
 					<span class="badge badge-primary">Testimonials</span>
 					<h2>15k Users Trust Lupicad Worldwide</h2>
@@ -452,72 +513,87 @@ if (session_status() === PHP_SESSION_NONE) {
 		<!--<section style="margin: 20px 0px;">-->
 		<!--	<img src="assets/lupicad/IndexLastBannerImg.jpeg" alt="">-->
 		<!--</section>-->
-		<section class="gallery-section ">
-		  <div class="container">
-			<div class="section-header sec-header-one text-center aos" data-aos="fade-up">
-			  <span class="badge badge-primary">Top sale</span>
-			  <h2>Our Best Products</h2>
+		<section class="px-4 py-6">
+			<div class="flex flex-wrap -mx-2">
+				<!-- Image Item -->
+				<div class="w-full sm:w-1/2 md:w-1/3 lg:w-1/5 px-2 mb-4">
+					<div class="overflow-hidden">
+						<img src="assets/lupicad/smalllupicad/Frame 12.png" alt="Banner 1"
+							class="w-full h-auto object-contain aspect-[2/1] transition-opacity duration-300" loading="lazy">
+					</div>
+				</div>
+
+				<div class="w-full sm:w-1/2 md:w-1/3 lg:w-1/5 px-2 mb-4">
+					<div class="overflow-hidden">
+						<img src="assets/lupicad/smalllupicad/Frame 3.png" alt="Banner 2"
+							class="w-full h-auto object-contain aspect-[2/1] transition-opacity duration-300" loading="lazy">
+					</div>
+				</div>
+
+				<div class="w-full sm:w-1/2 md:w-1/3 lg:w-1/5 px-2 mb-4">
+					<div class="overflow-hidden">
+						<img src="assets/lupicad/smalllupicad/Frame 4.png" alt="Banner 3"
+							class="w-full h-auto object-contain aspect-[2/1] transition-opacity duration-300" loading="lazy">
+					</div>
+				</div>
+
+				<div class="w-full sm:w-1/2 md:w-1/3 lg:w-1/5 px-2 mb-4">
+					<div class="overflow-hidden">
+						<img src="assets/lupicad/smalllupicad/Frame 5.png" alt="Banner 4"
+							class="w-full h-auto object-contain aspect-[2/1] transition-opacity duration-300" loading="lazy">
+					</div>
+				</div>
+
+				<div class="w-full sm:w-1/2 md:w-1/3 lg:w-1/5 px-2 mb-4">
+					<div class="overflow-hidden">
+						<img src="assets/lupicad/smalllupicad/Frame 6.png" alt="Banner 5"
+							class="w-full h-auto object-contain aspect-[2/1] transition-opacity duration-300" loading="lazy">
+					</div>
+				</div>
+				<div class="w-full sm:w-1/2 md:w-1/3 lg:w-1/5 px-2 mb-4">
+					<div class="overflow-hidden  ">
+						<img src="assets/lupicad/smalllupicad/Frame 7.png" alt="Banner 5"
+							class="w-full h-auto object-contain aspect-[2/1] transition-opacity duration-300" loading="lazy">
+					</div>
+				</div>
+				<div class="w-full sm:w-1/2 md:w-1/3 lg:w-1/5 px-2 mb-4">
+					<div class="overflow-hidden">
+						<img src="assets/lupicad/smalllupicad/Frame 8.png" alt="Banner 5"
+							class="w-full h-auto object-contain aspect-[2/1] transition-opacity duration-300" loading="lazy">
+					</div>
+				</div>
+				<div class="w-full sm:w-1/2 md:w-1/3 lg:w-1/5 px-2 mb-4">
+					<div class="overflow-hidden">
+						<img src="assets/lupicad/smalllupicad/Frame 9.png" alt="Banner 5"
+							class="w-full h-auto object-contain aspect-[2/1] transition-opacity duration-300" loading="lazy">
+					</div>
+				</div>
+				<div class="w-full sm:w-1/2 md:w-1/3 lg:w-1/5 px-2 mb-4">
+					<div class="overflow-hidden">
+						<img src="assets/lupicad/smalllupicad/Frame 10.png" alt="Banner 5"
+							class="w-full h-auto object-contain aspect-[2/1] transition-opacity duration-300" loading="lazy">
+					</div>
+				</div>
+				<div class="w-full sm:w-1/2 md:w-1/3 lg:w-1/5 px-2 mb-4">
+					<div class="overflow-hidden">
+						<img src="assets/lupicad/smalllupicad/Frame 11.png" alt="Banner 5"
+							class="w-full h-auto object-contain aspect-[2/1] transition-opacity duration-300" loading="lazy">
+					</div>
+				</div>
 			</div>
-			<div class="row gallery-row">
-			 <div class="col-md-3 col-sm-6 mb-4 "> 
-			  <a href="assets/lupicad/img1.jpg" class="gallery-item" data-lightbox="gallery"> 
-				  <img src="assets/lupicad/img1.jpg" class="img-fluid" alt="Gallery Image 1"> 
-			  
-			 </a>
-			 </div>
-			  <div class="col-md-3 col-sm-6 mb-4">
-				<a href="assets/lupicad/2.png" class="gallery-item" data-lightbox="gallery">
-				  <img src="assets/lupicad/img2.jpg" class="img-fluid" alt="Gallery Image 2">
-				</a>
-			  </div>
-			  <div class="col-md-3 col-sm-6 mb-4">
-				<a href="assets/lupicad/3.png" class="gallery-item" data-lightbox="gallery">
-				  <img src="assets/lupicad/img3.jpg" class="img-fluid" alt="Gallery Image 3">
-				</a>
-			  </div>
-			  <div class="col-md-3 col-sm-6 mb-4">
-				<a href="assets/lupicad/3.png" class="gallery-item" data-lightbox="gallery">
-				  <img src="assets/lupicad/img4.jpg" class="img-fluid" alt="Gallery Image 3">
-				</a>
-			  </div>
-			  <div class="row gallery-row">
-			 <div class="col-md-3 col-sm-6 mb-4 "> 
-			  <a href="assets/lupicad/img1.jpg" class="gallery-item" data-lightbox="gallery"> 
-				  <img src="assets/lupicad/img4 (2).jpg" class="img-fluid" alt="Gallery Image 1"> 
-			  
-			 </a>
-			 </div>
-			  <div class="col-md-3 col-sm-6 mb-4">
-				<a href="assets/lupicad/2.png" class="gallery-item" data-lightbox="gallery">
-				  <img src="assets/lupicad/img5.jpg" class="img-fluid" alt="Gallery Image 2">
-				</a>
-			  </div>
-			  <div class="col-md-3 col-sm-6 mb-4">
-				<a href="assets/lupicad/3.png" class="gallery-item" data-lightbox="gallery">
-				  <img src="assets/lupicad/img6.jpg" class="img-fluid" alt="Gallery Image 3">
-				</a>
-			  </div>
-			  <div class="col-md-3 col-sm-6 mb-4">
-				<a href="assets/lupicad/3.png" class="gallery-item" data-lightbox="gallery">
-				  <img src="assets/lupicad/img7.jpg" class="img-fluid" alt="Gallery Image 3">
-				</a>
-			  </div>
-			  <!-- Add more images as needed -->
-			</div>
-		  </div>
 		</section>
 		<!-- /Banner Section -->
 
 		<!-- FAQ Section -->
 
 		<section class="faq-section-one">
-			<div class="container">
+			<div class="container-box">
 				<div class="section-header sec-header-one text-center aos" data-aos="fade-up">
 					<span class="badge badge-primary">FAQ'S</span>
 					<h2>Your Questions are Answered</h2>
 				</div>
 				<div class="row">
-					<div class="col-md-10 mx-auto">
+					<div class="col-md-12 mx-auto">
 						<div class="faq-info aos" data-aos="fade-up">
 							<div class="accordion" id="faq-details">
 
@@ -641,7 +717,7 @@ if (session_status() === PHP_SESSION_NONE) {
 
 		<!-- Article Section -->
 		<section class="article-section">
-			<div class="container">
+			<div class="container-box">
 				<div class="section-header sec-header-one text-center aos" data-aos="fade-up">
 					<span class="badge badge-primary">Recent Blogs</span>
 					<h2>Stay Updated With Our Latest Blog</h2>
@@ -734,8 +810,8 @@ if (session_status() === PHP_SESSION_NONE) {
 				</div>
 			</div>
 		</section>
-		<div class="list-section">
-			<div class="container">
+		<!-- <div class="list-section">
+			<div class="container-box">
 				<div class="list-card card mb-0">
 					<div class="card-body">
 						<div
@@ -780,79 +856,58 @@ if (session_status() === PHP_SESSION_NONE) {
 					</div>
 				</div>
 			</div>
-		</div>
+		</div> -->
 		<!-- /Article Section -->
-		<section class="work-section">
-			<div class="container">
-				<div class="row">
-					<div class="col-lg-4 col-md-12 work-img-info aos" data-aos="fade-up">
-						<div class="work-img">
-							<img src="assets/lupicad/About/AboutColorBoxSectionImg.png" class="img-fluid"
-								alt="doctor-image">
-						</div>
-					</div>
-					<div class="col-lg-8 col-md-12 work-details">
-						<div class="section-header-one aos" data-aos="fade-up">
-							<h5>How it Works</h5>
-							<h2 class="section-title">4 easy steps to get your solution</h2>
-						</div>
-						<div class="row">
-							<div class="col-lg-6 col-md-6 aos" data-aos="fade-up">
-								<div class="work-info">
-									<div class="work-icon">
-										<span><img src="assets/lupicad/IndexIcon/1.png" alt="search-doctor-icon"></span>
-									</div>
-									<div class="work-content">
-										<h5>Search Medicine</h5>
-										<p>Search for the medicine you need based on its name, category, or usage.</p>
-									</div>
-								</div>
-							</div>
-							<div class="col-lg-6 col-md-6 aos" data-aos="fade-up">
-								<div class="work-info">
-									<div class="work-icon">
-										<span><img src="assets/lupicad/IndexIcon/2.png" alt="doctor-profile-icon"></span>
-									</div>
-									<div class="work-content">
-										<h5>Check Medicine Details</h5>
-										<p>Explore detailed information about the medicine, including its dosage, side
-											effects, and reviews.</p>
-									</div>
-								</div>
-							</div>
-							<div class="col-lg-6 col-md-6 aos" data-aos="fade-up">
-								<div class="work-info">
-									<div class="work-icon">
-										<span><img src="assets/lupicad/IndexIcon/3.png" alt="calendar-icon"></span>
-									</div>
-									<div class="work-content">
-										<h5>Add to Cart</h5>
-										<p>Once you've found the right medicine, add it to your cart and proceed to
-											checkout.</p>
-									</div>
-								</div>
-							</div>
-							<div class="col-lg-6 col-md-6 aos" data-aos="fade-up">
-								<div class="work-info">
-									<div class="work-icon">
-										<span><img src="assets/lupicad/IndexIcon/4.png" alt="solution-icon"></span>
-									</div>
-									<div class="work-content">
-										<h5>Get Your Medicine Delivered</h5>
-										<p>Complete your order and have your medicine delivered to your doorstep with
-											ease.</p>
-									</div>
-								</div>
-							</div>
-						</div>
-					</div>
-				</div>
-			</div>
-		</section>
+		<section class="work-section" style="background: linear-gradient(90deg, #f8fafc 0%, #e0f7fa 100%); padding: 60px 0;">
+  <div class="container-box">
+    <div class="row mb-5">
+      <div class="col-12">
+        <div class="section-header-one aos text-start" data-aos="fade-up">
+          <h5 style="color: #00796b; font-weight: 600;">How it Works</h5>
+          <h2 class="section-title" style="font-size: 2.2rem; font-weight: 700; margin-bottom: 0;">4 easy steps to get your solution</h2>
+        </div>
+      </div>
+    </div>
+    <div class="row justify-content-center align-items-stretch g-4">
+      <div class="col-md-6 col-lg-3">
+        <div class="work-step-card h-100 text-center p-4 shadow-sm bg-white rounded-4 aos" data-aos="fade-up" style="transition: box-shadow 0.2s;">
+          <div class="step-circle mb-3 mx-auto" style="width: 56px; height: 56px; background: #007cf0; color: #fff; border-radius: 50%; display: flex; align-items: center; justify-content: center; font-size: 1.5rem; font-weight: 700; box-shadow: 0 2px 8px rgba(0,0,0,0.08);">1</div>
+          <img src="assets/lupicad/IndexIcon/1.png" alt="search-doctor-icon" style="width: 48px; height: 48px; margin-bottom: 12px;">
+          <h5 style="font-weight: 600;">Search Medicine</h5>
+          <p style="font-size: 1rem; color: #555;">Search for the medicine you need based on its name, category, or usage.</p>
+        </div>
+      </div>
+      <div class="col-md-6 col-lg-3">
+        <div class="work-step-card h-100 text-center p-4 shadow-sm bg-white rounded-4 aos" data-aos="fade-up" style="transition: box-shadow 0.2s;">
+          <div class="step-circle mb-3 mx-auto" style="width: 56px; height: 56px; background: #00dfd8; color: #fff; border-radius: 50%; display: flex; align-items: center; justify-content: center; font-size: 1.5rem; font-weight: 700; box-shadow: 0 2px 8px rgba(0,0,0,0.08);">2</div>
+          <img src="assets/lupicad/IndexIcon/2.png" alt="doctor-profile-icon" style="width: 48px; height: 48px; margin-bottom: 12px;">
+          <h5 style="font-weight: 600;">Check Medicine Details</h5>
+          <p style="font-size: 1rem; color: #555;">Explore detailed information about the medicine, including its dosage, side effects, and reviews.</p>
+        </div>
+      </div>
+      <div class="col-md-6 col-lg-3">
+        <div class="work-step-card h-100 text-center p-4 shadow-sm bg-white rounded-4 aos" data-aos="fade-up" style="transition: box-shadow 0.2s;">
+          <div class="step-circle mb-3 mx-auto" style="width: 56px; height: 56px; background: #ffc03e; color: #fff; border-radius: 50%; display: flex; align-items: center; justify-content: center; font-size: 1.5rem; font-weight: 700; box-shadow: 0 2px 8px rgba(0,0,0,0.08);">3</div>
+          <img src="assets/lupicad/IndexIcon/3.png" alt="calendar-icon" style="width: 48px; height: 48px; margin-bottom: 12px;">
+          <h5 style="font-weight: 600;">Add to Cart</h5>
+          <p style="font-size: 1rem; color: #555;">Once you've found the right medicine, add it to your cart and proceed to checkout.</p>
+        </div>
+      </div>
+      <div class="col-md-6 col-lg-3">
+        <div class="work-step-card h-100 text-center p-4 shadow-sm bg-white rounded-4 aos" data-aos="fade-up" style="transition: box-shadow 0.2s;">
+          <div class="step-circle mb-3 mx-auto" style="width: 56px; height: 56px; background: #ff8d62; color: #fff; border-radius: 50%; display: flex; align-items: center; justify-content: center; font-size: 1.5rem; font-weight: 700; box-shadow: 0 2px 8px rgba(0,0,0,0.08);">4</div>
+          <img src="assets/lupicad/IndexIcon/4.png" alt="solution-icon" style="width: 48px; height: 48px; margin-bottom: 12px;">
+          <h5 style="font-weight: 600;">Get Your Medicine Delivered</h5>
+          <p style="font-size: 1rem; color: #555;">Complete your order and have your medicine delivered to your doorstep with ease.</p>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
 
 		<!-- Info Section -->
 		<section class="info-section">
-			<div class="container">
+			<div class="container-box">
 				<div class="contact-info" style="background: linear-gradient(90deg, #003406 0%, #229e1f 100%) !important;">
 					<div class="d-lg-flex align-items-center justify-content-between w-100 gap-4">
 						<div class="mb-4 mb-lg-0 aos" data-aos="fade-up">
@@ -889,7 +944,7 @@ if (session_status() === PHP_SESSION_NONE) {
 		<!-- /Info Section -->
 		<!-- Info Section -->
 		<section class="partners-section">
-			<div class="container">
+			<div class="container-box">
 				<div class="row">
 					<div class="col-md-12">
 						<div class="section-header-one text-center aos" data-aos="fade-up">
