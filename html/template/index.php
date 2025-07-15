@@ -141,11 +141,15 @@ if (session_status() === PHP_SESSION_NONE) {
 	<div class="main-wrapper">
 		<!-- Header -->
 		<?php require_once(__DIR__ . "/components/header.php") ?>
-
 		<!-- /Header -->
 
+		<!-- small product carousel -->
+		<?php require_once(__DIR__ . "/components/indexTopProduct.php") ?>
+		<!-- /small product carousel -->
+
+
 		<!-- Home Banner -->
-		<section class="banner-section banner-sec-one">
+		<section class="banner-section banner-sec-one" style="margin-top:175px;">
 			<!-- Image Slider Container -->
 			<div class="image-slider" style="width: 100%; margin: 0 auto; overflow: hidden;">
 				<div class="slider-container">
@@ -303,12 +307,12 @@ if (session_status() === PHP_SESSION_NONE) {
 				The world is landing on manufacture
 			</div>
 				<div style="display: flex; flex-direction: row; align-items:center;   justify-content: center; gap: 3%; flex-3">
-				<img src="assets/lupicad/1icon.png" style="width: 6vw;" alt="Badge 1">
-				<img src="assets/lupicad/2icon.png" style="width: 6vw;" alt="Badge 2">
-				<img src="assets/lupicad/3icon.jpeg" style="width: 6vw;" alt="Badge 3"> 
-				<img src="assets/lupicad/4icon.png" style="width: 6vw;" alt="Badge 3"> 
-				<img src="assets/lupicad/5icon.png" style="width: 6vw;" alt="Badge 5">
-				<img src="assets/lupicad/6icon.png" style="width: 6vw;" alt="Badge 6">
+				<img src="assets/lupicad/1icon.png" style="width:6vw;" alt="Badge 1">
+				<img src="assets/lupicad/2icon.png" style="width:6vw;" alt="Badge 2">
+				<img src="assets/lupicad/3icon.jpeg" style="width:6vw;" alt="Badge 3"> 
+				<img src="assets/lupicad/4icon.png" style="width:6vw;" alt="Badge 4"> 
+				<img src="assets/lupicad/5icon.png" style="width:6vw;" alt="Badge 5">
+				<img src="assets/lupicad/6icon.png" style="width:6vw;" alt="Badge 6">
 				</div>
 			</div>
 		</section> -->
