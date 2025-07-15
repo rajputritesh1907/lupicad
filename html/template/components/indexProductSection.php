@@ -353,7 +353,7 @@ foreach ($products as $product) {
         <div class="container">
             <div class="section-header sec-header-one text-center aos" data-aos="fade-up">
                 <span class="badge badge-primary">Categories</span>
-                <h2>General Health</h2>
+                <h2>Empowering You to Live Healthier Every Day</h2>
             </div>
             <div class="carousel product-carousel">
 <?php foreach ($general_products as $product): ?>
