@@ -8,7 +8,30 @@ if (session_status() === PHP_SESSION_NONE) {
 // $user_id = $_SESSION['user_id'];
 
 ?>
-
+<?php
+$faqs = [
+    [
+        "question" => "What is Lupicad Healthcare?",
+        "answer" => "Lupicad Healthcare is a healthcare-focused company committed to improving lives through innovative, reliable, and accessible health products and services. We specialize in <strong>Unani & ayurveda, wellness solutions</strong>."
+    ],
+    [
+        "question" => "Where is Lupicad Healthcare located?",
+        "answer" => "Our headquarters are located in Delhi. We also operate through a network of partners and distributors globally. Visit our Contact page for specific location details."
+    ],
+    [
+        "question" => "How can I get in touch with Lupicad Healthcare?",
+        "answer" => "You can reach us through our Contact Us page, via email at [email address], or by calling our customer support line at +91-97183 88999."
+    ],
+    [
+        "question" => "What kind of products does Lupicad Healthcare offer?",
+        "answer" => "We offer a wide range of healthcare solutions, including wellness supplements, diagnostic kits, medical devices, etc. For a detailed list, contact us on +91-9718388999."
+    ],
+    [
+        "question" => "Are Lupicad products safe and certified?",
+        "answer" => "Yes. All our products are developed in compliance with national and international regulatory standards. We ensure rigorous quality control and testing processes to guarantee safety and efficacy."
+    ]
+];
+?>
 
 <!DOCTYPE html>
 <html lang="en">
@@ -92,9 +115,22 @@ if (session_status() === PHP_SESSION_NONE) {
       border-radius: 100% 100% 0 0 / 30%;
       z-index: -1;
     }
-		.container-box{
-			padding: 0px 50px;
-		}
+	.container-box {
+  padding-left: 1rem;
+  padding-right: 1rem;
+}
+@media (min-width: 768px) {
+  .container-box {
+    padding-left: 2rem;
+    padding-right: 2rem;
+  }
+}
+@media (min-width: 1200px) {
+  .container-box {
+    padding-left: 3rem;
+    padding-right: 3rem;
+  }
+}
 		
 		.image-slider {
 			width: 100%;
@@ -154,9 +190,9 @@ if (session_status() === PHP_SESSION_NONE) {
 			<div class="image-slider" style="width: 100%; margin: 0 auto; overflow: hidden;">
 				<div class="slider-container">
 				<div><img src="assets/lupicad/iconslupicad/LupucatHeroBannner.jpg" alt="patient-image" style="width: 100%; object-fit: cover;"></div>
-				<div><img src="assets/lupicad/iconslupicad/womenProductsBanner.jpg" alt="patient-image" style="width: 100%; object-fit: cover;"></div>
-			  <div><img src="assets/img/banner/1banner (2).jpg" alt="patient-image" style="width: 100%; object-fit: cover;"></div>  
-					<!-- <div><img src="assets/lupicad/2banner.png" alt="patient-image" style="width: 100%; object-fit: cover;"></div> -->  
+				<!-- <div><img src="assets/lupicad/iconslupicad/womenProductsBanner.jpg" alt="patient-image" style="width: 100%; object-fit: cover;"></div> -->
+			  <div><img src="assets/lupicad/iconslupicad/banner.jpg" alt="patient-image" style="width: 100%; object-fit: cover;"></div>  
+					<div><img src="assets/lupicad/2banner.png" alt="patient-image" style="width: 100%; object-fit: cover;"></div>  
 					<!-- <div><img src="assets/lupicad/3banner.png" alt="patient-image" style="width: 100%; object-fit: cover;"></div> -->
 				</div>
 			</div>
@@ -193,8 +229,8 @@ if (session_status() === PHP_SESSION_NONE) {
 		</section> -->
 			<!-- Optional Background -->
 			
-			    		<section class="services-section aos" data-aos="fade-up" style="background: linear-gradient(90deg, #FFC03E 0%, #ff8d62 100%) !important;">
-			     <div class="horizontal-slide d-flex" data-direction="right" data-speed="fast">
+		 <section class="services-section aos" data-aos="fade-up" style="background: linear-gradient(90deg, #FFC03E 0%, #ff8d62 100%) !important;">
+			<div class="horizontal-slide d-flex" data-direction="right" data-speed="fast">
 				<div class="slide-list d-flex gap-4">
 					<div class="services-slide">
 						<h6><a href="javascript:void(0);">FREE SHIPPING</a></h6>
@@ -211,15 +247,15 @@ if (session_status() === PHP_SESSION_NONE) {
 					<div class="services-slide">
 						<h6><a href="javascript:void(0);">COD AVAILABLE</a></h6>
 					</div>
-					<!-- <div class="services-slide">
+					<div class="services-slide">
 							<h6><a href="javascript:void(0);">Home Care Services</a></h6>
-						</div> -->
+						</div>
 				</div>
 			</div>
 		</section>
         <section class="speciality-section">
 			<div class="container-box">
-				<div class="section-header sec-header-one text-start aos" data-aos="fade-up">
+				<div class="section-header sec-header-one text-center aos" data-aos="fade-up">
 					<h2>Medicine and Category</h2>
 				</div>
 				<div class="owl-carousel spciality-slider aos" data-aos="fade-">
@@ -275,8 +311,7 @@ if (session_status() === PHP_SESSION_NONE) {
 						<h6><a href="product-all.php">Immunity & hygiene</a></h6>
 					</div>
 					
-				</div>
-				<!-- <div class="spciality-nav nav-bottom owl-nav"></div> -->
+				</div> 
 			</div>
 		</section>
 			
@@ -349,7 +384,7 @@ if (session_status() === PHP_SESSION_NONE) {
 		<!--				<h6><a href="javascript:void(0);">COD AVAILABLE</a></h6>-->
 		<!--			</div>-->
 					<!-- <div class="services-slide">
-							<h6><a href="javascript:void(0);">Home Care Services</a></h6>-->
+ 					<h6><a href="javascript:void(0);">Home Care Services</a></h6>-->
 		<!--				</div> --> 
 		<!--		</div>-->
 		<!--	</div>-->
@@ -376,9 +411,7 @@ if (session_status() === PHP_SESSION_NONE) {
 				<div class="section-header sec-header-one text-center aos" data-aos="fade-up">
 					<span class="badge badge-primary">Testimonials</span>
 					<h2>15k Users Trust Lupicad Worldwide</h2>
-				</div>
-
-				<!-- Testimonial Slider -->
+				</div> 
 				<div class="owl-carousel testimonials-slider aos" data-aos="fade-up">
 					<div class="card shadow-none mb-0">
 						<div class="card-body">
@@ -493,10 +526,7 @@ if (session_status() === PHP_SESSION_NONE) {
 							</div>
 						</div>
 					</div>
-				</div>
-				<!-- /Testimonial Slider -->
-
-				<!-- Counter -->
+				</div> 
 				<div class="testimonial-counter">
 					<div class="row row-cols-1 row-cols-sm-2 row-cols-md-3 row-cols-lg-5 row-gap-4">
 						<div class="counter-item text-center aos" data-aos="fade-up">
@@ -520,8 +550,7 @@ if (session_status() === PHP_SESSION_NONE) {
 							<p>Lab Tests Available</p>
 						</div>
 					</div>
-				</div>
-				<!-- /Counter -->
+				</div> 
 
 			</div>
 		</section>
@@ -609,130 +638,54 @@ if (session_status() === PHP_SESSION_NONE) {
 
 		<!-- FAQ Section -->
 
-		<section class="faq-section-one">
-			<div class="container-box">
-				<div class="section-header sec-header-one text-center aos" data-aos="fade-up">
-					<span class="badge badge-primary">FAQ'S</span>
-					<h2>Your Questions are Answered</h2>
-				</div>
-				<div class="row">
-					<div class="col-md-12 mx-auto">
-						<div class="faq-info aos" data-aos="fade-up">
-							<div class="accordion" id="faq-details">
+		
+<section class="w-full py-12 bg-gradient-to-br from-blue-50 via-white to-blue-100">
+  <div class="container-box">
+    <h2 class="text-3xl font-extrabold text-center text-blue-900 mb-8 ">Your Questions are Answered</h2>
+    <div id="faq-accordion" class="space-y-4">
+      <?php foreach ($faqs as $faq): ?>
+        <div class="bg-white rounded-xl   overflow-hidden">
+          <button type="button" class="faq-toggle w-full flex items-center gap-3 py-4 px-6 text-left text-lg font-semibold focus:outline-none group hover:bg-blue-50 transition">
+            <span class="h-8 w-1.5 bg-blue-500 rounded-full mr-2"></span>
+            <span class="flex-1"><?= $faq['question'] ?></span>
+            <span class="faq-icon transition-transform duration-300 text-3xl font-semibold text-blue-500 group-hover:text-blue-700">+</span>
+          </button>
+          <div class="faq-content px-8 text-gray-600 overflow-hidden max-h-0 transition-all duration-500 ease-in-out">
+            <p class="text-left text-base py-4">
+              <?= $faq['answer'] ?>
+            </p>
+          </div>
+        </div>
+      <?php endforeach; ?>
+    </div>
+  </div>
+  <script>
+    const toggles = document.querySelectorAll('.faq-toggle');
+    toggles.forEach(toggle => {
+      toggle.addEventListener('click', () => {
+        const content = toggle.nextElementSibling;
+        const icon = toggle.querySelector('.faq-icon');
+        const isOpen = content.style.maxHeight && content.style.maxHeight !== '0px';
+        // Close all first
+        document.querySelectorAll('.faq-content').forEach(c => {
+          c.style.maxHeight = null;
+        });
+        document.querySelectorAll('.faq-icon').forEach(i => {
+          i.textContent = '+';
+          i.classList.remove('rotate-135');
+        });
+        // Then toggle selected one
+        if (!isOpen) {
+          content.style.maxHeight = content.scrollHeight + 'px';
+          icon.textContent = '–';
+          icon.classList.add('rotate-135');
+        }
+      });
+    });
+  </script>
+</section>
 
-								<!-- FAQ Item -->
-								<div class="accordion-item">
-									<h2 class="accordion-header" id="headingOne">
-										<a href="javascript:void(0);" class="accordion-button" data-bs-toggle="collapse"
-											data-bs-target="#collapseOne" aria-expanded="true"
-											aria-controls="collapseOne">
-											What is Lupicad Healthcare?
 
-										</a>
-									</h2>
-									<div id="collapseOne" class="accordion-collapse collapse show"
-										aria-labelledby="headingOne" data-bs-parent="#faq-details">
-										<div class="accordion-body">
-											<div class="accordion-content">
-												<p>Lupicad Healthcare is a healthcare-focused company committed to improving lives through innovative, reliable, and accessible health products and services. We specialize in [Unani & ayurveda, wellness solutions].</p>
-											</div>
-										</div>
-									</div>
-								</div>
-								<!-- /FAQ Item -->
-
-								<!-- FAQ Item -->
-								<div class="accordion-item">
-									<h2 class="accordion-header" id="headingTwo">
-										<a href="javascript:void(0);" class="accordion-button collapsed"
-											data-bs-toggle="collapse" data-bs-target="#collapseTwo"
-											aria-expanded="false" aria-controls="collapseTwo">
-											Where is Lupicad Healthcare located?
-
-										</a>
-									</h2>
-									<div id="collapseTwo" class="accordion-collapse collapse"
-										aria-labelledby="headingTwo" data-bs-parent="#faq-details">
-										<div class="accordion-body">
-											<div class="accordion-content">
-												<p>Our headquarters are located in Delhi. We also operate through a network of partners and distributors globally. Visit our Contact page for specific location details.</p>
-											</div>
-										</div>
-									</div>
-								</div>
-								<!-- /FAQ Item -->
-
-								<!-- FAQ Item -->
-								<div class="accordion-item">
-									<h2 class="accordion-header" id="headingThree">
-										<a href="javascript:void(0);" class="accordion-button collapsed"
-											data-bs-toggle="collapse" data-bs-target="#collapseThree"
-											aria-expanded="false" aria-controls="collapseThree">
-											How can I get in touch with Lupicad Healthcare?
-
-										</a>
-									</h2>
-									<div id="collapseThree" class="accordion-collapse collapse"
-										aria-labelledby="headingThree" data-bs-parent="#faq-details">
-										<div class="accordion-body">
-											<div class="accordion-content">
-												<p> You can reach us through our Contact Us page, via email at [email address], or by calling our customer support line at +91-97183 88999.</p>
-											</div>
-										</div>
-									</div>
-								</div>
-								<!-- /FAQ Item -->
-
-								<!-- FAQ Item -->
-								<div class="accordion-item">
-									<h2 class="accordion-header" id="headingFour">
-										<a href="javascript:void(0);" class="accordion-button collapsed"
-											data-bs-toggle="collapse" data-bs-target="#collapseFour"
-											aria-expanded="false" aria-controls="collapseFour">
-											What kind of products does Lupicad Healthcare offer?
-
-										</a>
-									</h2>
-									<div id="collapseFour" class="accordion-collapse collapse"
-										aria-labelledby="headingFour" data-bs-parent="#faq-details">
-										<div class="accordion-body">
-											<div class="accordion-content">
-												<p>We offer a wide range of healthcare solutions, including wellness supplements, diagnostic kits, medical devices, etc.]. For a detailed list, contact us on +91-9718388999.</p>
-											</div>
-										</div>
-									</div>
-								</div>
-								<!-- /FAQ Item -->
-
-								<!-- FAQ Item -->
-								<div class="accordion-item">
-									<h2 class="accordion-header" id="headingFive">
-										<a href="javascript:void(0);" class="accordion-button collapsed"
-											data-bs-toggle="collapse" data-bs-target="#collapseFive"
-											aria-expanded="false" aria-controls="collapseFive">
-										Are Lupicad products safe and certified?
-
-										</a>
-									</h2>
-									<div id="collapseFive" class="accordion-collapse collapse"
-										aria-labelledby="headingFive" data-bs-parent="#faq-details">
-										<div class="accordion-body">
-											<div class="accordion-content">
-												<p>Yes. All our products are developed in compliance with national and international regulatory standards. We ensure rigorous quality control and testing processes to guarantee safety and efficacy.
-												</p>
-											</div>
-										</div>
-									</div>
-								</div>
-								<!-- /FAQ Item -->
-
-							</div>
-						</div>
-
-					</div>
-				</div>
-			</div>
-		</section>
 
 		<!-- App Section -->
 
@@ -777,8 +730,7 @@ if (session_status() === PHP_SESSION_NONE) {
 							</div>
 							<div class="article-info">
 								<span class="badge badge-cyan mb-2">Health</span>
-								<h6 class="mb-2"><a href="blog-details.php">The Power of a Healthy Lifestyle
-
+								<h6 class="mb-2"><a href="blog-details.php">The Power of a Healthy Lifestyle 
 									</a></h6>
 								<p>Maintaining good health is essential for a happy and fulfilling life. A healthy
 									lifestyle not only improves physical well-being but also boosts mental and emotional
@@ -982,9 +934,7 @@ if (session_status() === PHP_SESSION_NONE) {
 					</div>
 				</div>
 			</div>
-		</section>
-		<!-- /Info Section -->
-		<!-- Info Section -->
+		</section> 
 		<section class="partners-section">
 			<div class="container-box">
 				<div class="row">
@@ -1026,36 +976,7 @@ if (session_status() === PHP_SESSION_NONE) {
 								<img class="img-fluid" src="assets/lupicad/CERTIFICATES/6.png" alt="partners">
 							</a>
 						</li>
-						<!-- <li>
-						    	<a href="javascript:void(0);">
-						    		<img class="img-fluid" src="assets/img/partners/partners-1.svg" alt="partners">
-						    	</a>
-						    </li>
-						    <li>
-						    	<a href="javascript:void(0);">
-						    		<img class="img-fluid" src="assets/img/partners/partners-2.svg" alt="partners">
-						    	</a>
-						    </li>
-						    <li>
-						    	<a href="javascript:void(0);">
-						    		<img class="img-fluid" src="assets/img/partners/partners-3.svg" alt="partners">
-						    	</a>
-						    </li>
-						    <li>
-						    	<a href="javascript:void(0);">
-						    		<img class="img-fluid" src="assets/img/partners/partners-4.svg" alt="partners">
-						    	</a>
-						    </li>
-						    <li>
-						    	<a href="javascript:void(0);">
-						    		<img class="img-fluid" src="assets/img/partners/partners-5.svg" alt="partners">
-						    	</a>
-						    </li>
-						    <li>
-						    	<a href="javascript:void(0);">
-						    		<img class="img-fluid" src="assets/img/partners/partners-6.svg" alt="partners">
-						    	</a>
-						    </li> -->
+ 
 					</ul>
 				</div>
 			</div>

@@ -355,7 +355,7 @@ foreach ($products as $product) {
                 <span class="badge badge-primary">Categories</span>
                 <h2>Empowering You to Live Healthier Every Day</h2>
             </div>
-            <div class="carousel">
+            <div class="carousel product-carousel">
 <?php foreach ($general_products as $product): ?>
   <a href="product-all.php" style="text-decoration:none;color:inherit;">
     <div class="supplement-card"> 
@@ -383,12 +383,8 @@ foreach ($products as $product) {
 
     <!-- Other Products Section -->
     <section style="margin-top:clamp(20px,5vw,40px);">
-    <div class="container">
-            <!-- <div class="section-header sec-header-one text-center aos" data-aos="fade-up">
-                <span class="badge badge-primary">Categories</span>
-                <h2>General Health</h2>
-            </div> -->
-            <div class="carousel">
+    <div class="container"> 
+            <div class="carousel product-carousel">
             <?php foreach ($other_products as $product): ?>
   <a href="product-all.php" style="text-decoration:none;color:inherit;">
     <div class="supplement-card"> 
@@ -415,3 +411,32 @@ foreach ($products as $product) {
         
     </section>
 </section>
+<script>
+$(document).ready(function(){
+  $('.product-carousel').slick({
+    slidesToShow: 5,
+    slidesToScroll: 1,
+    infinite: true,
+    speed: 800,            // smoother transition
+    autoplay: true,
+    autoplaySpeed: 2500,   // 2.5 seconds
+    // pauseOnHover: true,
+    arrows: true,
+    dots: false,
+    responsive: [
+      {
+        breakpoint: 1200,
+        settings: { slidesToShow: 3 }
+      },
+      {
+        breakpoint: 992,
+        settings: { slidesToShow: 2 }
+      },
+      {
+        breakpoint: 600,
+        settings: { slidesToShow: 1 }
+      }
+    ]
+  });
+});
+</script>
