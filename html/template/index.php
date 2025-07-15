@@ -319,7 +319,16 @@ $faqs = [
 		<!-- /List -->
 
 		<!-- Banner Section -->
-		<section style="margin: 20px 0px; display: flex; flex-direction: row; align-items: center; gap: 32px; width: 100%;  border-radius: 16px; box-shadow: 0 2px 16px rgba(0,0,0,0.07); padding: 20px 0px;">
+
+		<!-- my -->
+
+
+
+
+
+
+		<!-- myend -->
+		<!-- <section style="margin: 20px 0px; display: flex; flex-direction: row; align-items: center; gap: 32px; width: 100%;  border-radius: 16px; box-shadow: 0 2px 16px rgba(0,0,0,0.07); padding: 20px 0px;">
 			<div style="width: 40%; display: flex; flex-direction: column; align-items: center; justify-content: center;">
 				<img src="assets/lupicad/50.png" style="width: 50%;" alt="Badge">
 				
@@ -337,7 +346,7 @@ $faqs = [
 				<img src="assets/lupicad/6icon.png" style="width: 6vw;" alt="Badge 6">
 				</div>
 			</div>
-		</section>
+		</section> -->
 		<!-- /Banner Section -->
 
 		<!-- Speciality Section -->
@@ -385,6 +394,12 @@ $faqs = [
 		<!-- Bookus Section -->
 
 		<!-- /Bookus Section -->
+
+		<!-- 50years -->
+		 <section class="bg-white pt-4">
+  <img src="assets/lupicad/50yearBanner.png" alt="50 Years of Trust" class="w-full h-auto object-cover" />
+</section>
+		 <!-- end -->
 
 		<!-- Testimonial Section -->
 		<section class="article-section">
@@ -542,8 +557,13 @@ $faqs = [
 		<!--<section style="margin: 20px 0px;">-->
 		<!--	<img src="assets/lupicad/IndexLastBannerImg.jpeg" alt="">-->
 		<!--</section>-->
-		<section class="container-box">
-			<div class="flex flex-wrap -mx-2"> 
+		<section class="px-4 py-6">
+			<div class="section-header sec-header-one text-center aos" data-aos="fade-up">
+					<!-- <span class="badge badge-primary">Testimonials</span> -->
+					<h2>Today's Top Picks</h2>
+				</div>
+			<div class="flex flex-wrap -mx-2">
+				<!-- Image Item -->
 				<div class="w-full sm:w-1/2 md:w-1/3 lg:w-1/5 px-2 mb-4">
 					<div class="overflow-hidden">
 						<img src="assets/lupicad/smalllupicad/Frame 12.png" alt="Banner 1"
@@ -820,38 +840,57 @@ $faqs = [
       </div>
     </div>
     <div class="row justify-content-center align-items-stretch g-4">
+     <div class="col-md-6 col-lg-3">
+  <div class="work-step-card h-100 text-center p-4 shadow-sm bg-white rounded-4 aos" data-aos="fade-up" style="transition: box-shadow 0.2s;">
+    <div class="step-circle mb-3 mx-auto" style="width: 56px; height: 56px; background: #007cf0; color: #fff; border-radius: 50%; display: flex; align-items: center; justify-content: center; font-size: 1.5rem; font-weight: 700; box-shadow: 0 2px 8px rgba(0,0,0,0.08);">1</div>
+    
+    <!-- Flex container for icon and heading -->
+    <div style="display: flex; align-items: center; justify-content: center; gap: 8px; margin-bottom: 12px;">
+      <img src="assets/lupicad/IndexIcon/1.png" alt="search-doctor-icon" style="width: 24px; height: 24px;">
+      <h5 style="font-weight: 600; margin: 0;">Search Medicine</h5>
+    </div>
+
+    <p style="font-size: 1rem; color: #555;">Search for the medicine you need based on its name, category, or usage.</p>
+  </div>
+</div>
+     <div class="col-md-6 col-lg-3">
+  <div class="work-step-card h-100 text-center p-4 shadow-sm bg-white rounded-4 aos" data-aos="fade-up" style="transition: box-shadow 0.2s;">
+    <div class="step-circle mb-3 mx-auto" style="width: 56px; height: 56px; background: #00dfd8; color: #fff; border-radius: 50%; display: flex; align-items: center; justify-content: center; font-size: 1.5rem; font-weight: 700; box-shadow: 0 2px 8px rgba(0,0,0,0.08);">2</div>
+
+    <div style="display: flex; align-items: center; justify-content: center; gap: 8px; margin-bottom: 12px;">
+      <img src="assets/lupicad/IndexIcon/2.png" alt="doctor-profile-icon" style="width: 24px; height: 24px;">
+      <h5 style="font-weight: 600; margin: 0;">Check Medicine Details</h5>
+    </div>
+
+    <p style="font-size: 1rem; color: #555;">Explore detailed information about the medicine, including its dosage, side effects, and reviews.</p>
+  </div>
+</div>
       <div class="col-md-6 col-lg-3">
-        <div class="work-step-card h-100 text-center p-4 shadow-sm bg-white rounded-4 aos" data-aos="fade-up" style="transition: box-shadow 0.2s;">
-          <div class="step-circle mb-3 mx-auto" style="width: 56px; height: 56px; background: #007cf0; color: #fff; border-radius: 50%; display: flex; align-items: center; justify-content: center; font-size: 1.5rem; font-weight: 700; box-shadow: 0 2px 8px rgba(0,0,0,0.08);">1</div>
-          <img src="assets/lupicad/IndexIcon/1.png" alt="search-doctor-icon" style="width: 48px; height: 48px; margin-bottom: 12px;">
-          <h5 style="font-weight: 600;">Search Medicine</h5>
-          <p style="font-size: 1rem; color: #555;">Search for the medicine you need based on its name, category, or usage.</p>
-        </div>
-      </div>
-      <div class="col-md-6 col-lg-3">
-        <div class="work-step-card h-100 text-center p-4 shadow-sm bg-white rounded-4 aos" data-aos="fade-up" style="transition: box-shadow 0.2s;">
-          <div class="step-circle mb-3 mx-auto" style="width: 56px; height: 56px; background: #00dfd8; color: #fff; border-radius: 50%; display: flex; align-items: center; justify-content: center; font-size: 1.5rem; font-weight: 700; box-shadow: 0 2px 8px rgba(0,0,0,0.08);">2</div>
-          <img src="assets/lupicad/IndexIcon/2.png" alt="doctor-profile-icon" style="width: 48px; height: 48px; margin-bottom: 12px;">
-          <h5 style="font-weight: 600;">Check Medicine Details</h5>
-          <p style="font-size: 1rem; color: #555;">Explore detailed information about the medicine, including its dosage, side effects, and reviews.</p>
-        </div>
-      </div>
-      <div class="col-md-6 col-lg-3">
-        <div class="work-step-card h-100 text-center p-4 shadow-sm bg-white rounded-4 aos" data-aos="fade-up" style="transition: box-shadow 0.2s;">
-          <div class="step-circle mb-3 mx-auto" style="width: 56px; height: 56px; background: #ffc03e; color: #fff; border-radius: 50%; display: flex; align-items: center; justify-content: center; font-size: 1.5rem; font-weight: 700; box-shadow: 0 2px 8px rgba(0,0,0,0.08);">3</div>
-          <img src="assets/lupicad/IndexIcon/3.png" alt="calendar-icon" style="width: 48px; height: 48px; margin-bottom: 12px;">
-          <h5 style="font-weight: 600;">Add to Cart</h5>
-          <p style="font-size: 1rem; color: #555;">Once you've found the right medicine, add it to your cart and proceed to checkout.</p>
-        </div>
-      </div>
-      <div class="col-md-6 col-lg-3">
-        <div class="work-step-card h-100 text-center p-4 shadow-sm bg-white rounded-4 aos" data-aos="fade-up" style="transition: box-shadow 0.2s;">
-          <div class="step-circle mb-3 mx-auto" style="width: 56px; height: 56px; background: #ff8d62; color: #fff; border-radius: 50%; display: flex; align-items: center; justify-content: center; font-size: 1.5rem; font-weight: 700; box-shadow: 0 2px 8px rgba(0,0,0,0.08);">4</div>
-          <img src="assets/lupicad/IndexIcon/4.png" alt="solution-icon" style="width: 48px; height: 48px; margin-bottom: 12px;">
-          <h5 style="font-weight: 600;">Get Your Medicine Delivered</h5>
-          <p style="font-size: 1rem; color: #555;">Complete your order and have your medicine delivered to your doorstep with ease.</p>
-        </div>
-      </div>
+  <div class="work-step-card h-100 text-center p-4 shadow-sm bg-white rounded-4 aos" data-aos="fade-up" style="transition: box-shadow 0.2s;">
+    <div class="step-circle mb-3 mx-auto" style="width: 56px; height: 56px; background: #ffc03e; color: #fff; border-radius: 50%; display: flex; align-items: center; justify-content: center; font-size: 1.5rem; font-weight: 700; box-shadow: 0 2px 8px rgba(0,0,0,0.08);">3</div>
+
+    <div style="display: flex; align-items: center; justify-content: center; gap: 8px; margin-bottom: 12px;">
+      <img src="assets/lupicad/IndexIcon/3.png" alt="calendar-icon" style="width: 24px; height: 24px;">
+      <h5 style="font-weight: 600; margin: 0;">Add to Cart</h5>
+    </div>
+
+    <p style="font-size: 1rem; color: #555;">Once you've found the right medicine, add it to your cart and proceed to checkout.</p>
+  </div>
+</div>
+
+     <div class="col-md-6 col-lg-3">
+  <div class="work-step-card h-100 text-center p-4 shadow-sm bg-white rounded-4 aos" data-aos="fade-up" style="transition: box-shadow 0.2s;">
+    <div class="step-circle mb-3 mx-auto" style="width: 56px; height: 56px; background: #ff8d62; color: #fff; border-radius: 50%; display: flex; align-items: center; justify-content: center; font-size: 1.5rem; font-weight: 700; box-shadow: 0 2px 8px rgba(0,0,0,0.08);">4</div>
+
+    <div style="display: flex; align-items: center; justify-content: center; gap: 8px; margin-bottom: 12px;">
+      <img src="assets/lupicad/IndexIcon/4.png" alt="solution-icon" style="width: 24px; height: 24px;">
+      <h5 style="font-weight: 600; margin: 0;">Get Your Medicine Delivered</h5>
+    </div>
+
+    <p style="font-size: 1rem; color: #555;">Complete your order and have your medicine delivered to your doorstep with ease.</p>
+  </div>
+</div>
+
     </div>
   </div>
 </section>
