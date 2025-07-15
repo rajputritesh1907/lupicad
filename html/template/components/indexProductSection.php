@@ -260,36 +260,59 @@ $products = [
   top: 10px; left: 10px;
   background: orange; color: #fff;
   padding: 4px 12px;
-  font-size: 16px; font-weight: 700;
+  font-size: 13px; font-weight: 700;
   border-radius: 4px;
 }
 .product-image {
   width: 100%;
-  height: 130px;
+  height: 180px;
   display: flex;
   align-items: center;
   justify-content: center;
   margin-bottom: 10px;
+  position: relative;
 }
-.product-image img {
+.product-image img.main-img {
   max-width: 100%;
-  max-height: 130px;
+  max-height: 180px;
   object-fit: contain;
+  position: absolute;
+  left: 0; top: 0; right: 0; bottom: 0;
+  margin: auto;
+  transition: opacity 0.3s;
+  z-index: 1;
+}
+.product-image img.hover-img {
+  max-width: 100%;
+  max-height: 180px;
+  object-fit: contain;
+  position: absolute;
+  left: 0; top: 0; right: 0; bottom: 0;
+  margin: auto;
+  opacity: 0;
+  transition: opacity 0.3s;
+  z-index: 2;
+}
+.supplement-card:hover .product-image img.main-img {
+  opacity: 0;
+}
+.supplement-card:hover .product-image img.hover-img {
+  opacity: 1;
 }
 .product-title {
-  font-size: 18px;
+  font-size: 14px;
   font-weight: 700;
   margin-bottom: 6px;
-  max-height: 48px;
+  max-height: 40px;
   overflow: hidden;
 }
 .product-weight {
-  font-size: 15px;
+  font-size: 12px;
   color: #888; margin-bottom: 5px;
 }
 .price-row {
   display: flex; gap: 10px;
-  font-size: 20px;
+  font-size: 15px;
   margin-bottom: 8px;
 }
 .price-new {
@@ -297,7 +320,7 @@ $products = [
 }
 .price-old {
   text-decoration: line-through; color: #c1c1c1;
-  font-size: 16px;
+  font-size: 12px;
 }
 .add-btn {
   position: absolute; right: 16px; bottom: 16px;
@@ -334,25 +357,25 @@ foreach ($products as $product) {
             </div>
             <div class="carousel">
 <?php foreach ($general_products as $product): ?>
-  <div class="supplement-card">
-    <?php if (!empty($product['discount'])): ?>
-      <div class="discount-badge"><?= htmlspecialchars($product['discount']) ?>% OFF</div>
-    <?php endif; ?>
-    <div class="product-image">
-      <img src="<?= htmlspecialchars($product['img1']) ?>" alt="<?= htmlspecialchars($product['name']) ?>">
-    </div>
-    <div class="product-title"><?= htmlspecialchars($product['name']) ?></div>
-    <?php if (!empty($product['weight'])): ?>
-      <div class="product-weight"><?= htmlspecialchars($product['weight']) ?></div>
-    <?php endif; ?>
-    <div class="price-row">
-      <span class="price-new">₹<?= htmlspecialchars($product['price']) ?></span>
-      <?php if (!empty($product['old_price'])): ?>
-        <span class="price-old">₹<?= htmlspecialchars($product['old_price']) ?></span>
+  <a href="product-all.php" style="text-decoration:none;color:inherit;">
+    <div class="supplement-card"> 
+      <div class="product-image">
+        <img src="<?= htmlspecialchars($product['img1']) ?>" alt="<?= htmlspecialchars($product['name']) ?>" class="main-img">
+        <img src="<?= htmlspecialchars($product['img2']) ?>" alt="<?= htmlspecialchars($product['name']) ?>" class="hover-img">
+      </div>
+      <div class="product-title"><?= htmlspecialchars($product['name']) ?></div>
+      <?php if (!empty($product['weight'])): ?>
+        <div class="product-weight"><?= htmlspecialchars($product['weight']) ?></div>
       <?php endif; ?>
+      <div class="price-row">
+        <span class="price-new">₹<?= htmlspecialchars($product['price']) ?></span>
+        <?php if (!empty($product['old_price'])): ?>
+          <span class="price-old">₹<?= htmlspecialchars($product['old_price']) ?></span>
+        <?php endif; ?>
+      </div>
+      <button class="add-btn">+</button>
     </div>
-    <button class="add-btn">+</button>
-  </div>
+  </a>
 <?php endforeach; ?>
 </div>
         </div>
@@ -360,46 +383,35 @@ foreach ($products as $product) {
 
     <!-- Other Products Section -->
     <section style="margin-top:clamp(20px,5vw,40px);">
-        <div class="container">
-            <div class="section-header sec-header-one text-center aos" data-aos="fade-up"> 
-            </div>
-            <div class="doctors-slider owl-carousel aos" data-aos="fade-up" style="min-height: 350px;height: 65%; max-height: 420px;">
-                <?php foreach ($other_products as $product): ?>
-                    <div class="mb-4" style="width: 100%;">
-                        <div class="product-custom d-flex" style="height:100% !important;">
-                            <div class="card">
-                                <div class="card-img card-img-hover">
-                                    <div class="image-container">
-                                        <a href="<?= $product['link'] ?>">
-                                            <center><img src="<?= $product['img1'] ?>" id="img-1" alt="product image" style="width:auto;height:100%"></center>
-                                        </a>
-                                        <a href="<?= $product['link'] ?>"><img src="<?= $product['img2'] ?>" id="img-2" alt="product image"></a>
-                                    </div>
-                                </div>
-                                <div class="card-body p-0">
-                                    <div class="d-flex active-bar align-items-center justify-content-between p-3">
-                                        <a href="javascript:void(0)" class="text-indigo fw-medium fs-14"><?= htmlspecialchars($product['category']) ?></a>
-                                    </div>
-                                    <div class="p-3 pt-0">
-                                        <div class="pb-1">
-                                            <p class="mb-1 product-titl"><b><a href="product-all.php"><?= htmlspecialchars($product['name']) ?></a></b></p>
-                                        </div>
-                                        <div class="d-flex align-items-center justify-content-between">
-                                            <div>
-                                                <h3 class="text-orange"><span class="woocommerce-Price-currencySymbol">₹</span><?= htmlspecialchars($product['price']) ?></h3>
-                                            </div>
-                                            <a href="<?= $product['link'] ?>" class="BuyNowBtn d-inline-flex align-items-center rounded-pill"
-                                                style="background-color: <?= $product['btn_color'] ?> !important;margin-top: 10px; font-size: 10px;">
-                                                Buy Now
-                                            </a>
-                                        </div>
-                                    </div>
-                                </div>
-                            </div>
-                        </div>
-                    </div>
-                <?php endforeach; ?>
-            </div>
+    <div class="container">
+            <!-- <div class="section-header sec-header-one text-center aos" data-aos="fade-up">
+                <span class="badge badge-primary">Categories</span>
+                <h2>General Health</h2>
+            </div> -->
+            <div class="carousel">
+            <?php foreach ($other_products as $product): ?>
+  <a href="product-all.php" style="text-decoration:none;color:inherit;">
+    <div class="supplement-card"> 
+      <div class="product-image">
+        <img src="<?= $product['img1'] ?>" alt="<?= htmlspecialchars($product['name']) ?>" class="main-img">
+        <img src="<?= $product['img2'] ?>" alt="<?= htmlspecialchars($product['name']) ?>" class="hover-img">
+      </div>
+      <div class="product-title"><?= htmlspecialchars($product['name']) ?></div>
+      <?php if (!empty($product['weight'])): ?>
+        <div class="product-weight"><?= htmlspecialchars($product['weight']) ?></div>
+      <?php endif; ?>
+      <div class="price-row">
+        <span class="price-new">₹<?= htmlspecialchars($product['price']) ?></span>
+        <?php if (!empty($product['old_price'])): ?>
+          <span class="price-old">₹<?= htmlspecialchars($product['old_price']) ?></span>
+        <?php endif; ?>
+      </div>
+      <button class="add-btn">+</button>
+    </div>
+  </a>
+<?php endforeach; ?>
+</div>
         </div>
+        
     </section>
 </section>
